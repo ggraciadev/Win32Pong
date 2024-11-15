@@ -23,6 +23,9 @@ public:
 
 	virtual void BeginPlay();
 	virtual void EndPlay();
+	virtual void Draw(ID2D1HwndRenderTarget* renderTarget);
+
+	virtual void UpdateShape() {}
 
 public:
 

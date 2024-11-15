@@ -31,6 +31,10 @@ void DrawableShapeComponent::BeginPlay() {
 
 }
 
+void DrawableShapeComponent::Draw(ID2D1HwndRenderTarget* renderTarget) {
+	UpdateShape();
+}
+
 void DrawableShapeComponent::EndPlay() {
 	SafeDestroy(&pBrush);
 }

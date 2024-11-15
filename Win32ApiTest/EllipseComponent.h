@@ -17,6 +17,7 @@ protected:
 public:
 	virtual void BeginPlay();
 	virtual void Draw(ID2D1HwndRenderTarget* renderTarget);
+	virtual void UpdateShape();
 
 	Vector2D GetEllipseRadius() const { return pEllipseRadius; }
 	void SetEllipseRadius(const Vector2D& ellipseRadius) { pEllipseRadius = ellipseRadius; }
