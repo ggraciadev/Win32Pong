@@ -5,7 +5,12 @@ Scene::Scene() {
 }
 
 Scene::~Scene() {
-
+	int size = pActors.size();
+	for (int i = size - 1; i >= 0; --i) {
+		if (pActors[i] != NULL) {
+			delete pActors[i];
+		}
+	}
 }
 
 /**

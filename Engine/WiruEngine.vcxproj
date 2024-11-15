@@ -127,6 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Game\Actors\MyEllipseActor.h" />
+    <ClInclude Include="..\Game\Managers\MyGameManager.h" />
+    <ClInclude Include="..\Game\Scenes\TestScene.h" />
     <ClInclude Include="Components\ActorComponent.h" />
     <ClInclude Include="Components\DrawableShapeComponent.h" />
     <ClInclude Include="Components\EllipseComponent.h" />
@@ -146,6 +149,9 @@
     <ClInclude Include="Windows\MainWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Game\Actors\MyEllipseActor.cpp" />
+    <ClCompile Include="..\Game\Managers\MyGameManager.cpp" />
+    <ClCompile Include="..\Game\Scenes\TestScene.cpp" />
     <ClCompile Include="Components\ActorComponent.cpp" />
     <ClCompile Include="Components\DrawableShapeComponent.cpp" />
     <ClCompile Include="Components\EllipseComponent.cpp" />

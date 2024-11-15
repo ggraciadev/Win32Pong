@@ -46,6 +46,18 @@
     <Filter Include="Engine\Archivos de origen\Objects">
       <UniqueIdentifier>{c1595ab9-e4b8-479a-bcb1-5a31c98647b0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{f0cbb5f9-2a82-4798-92f0-cf4a89f3c355}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Scenes">
+      <UniqueIdentifier>{8f5cf9ab-b8f2-44a8-b16a-97c07c711e97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Actors">
+      <UniqueIdentifier>{94529b9d-48bf-430f-9fdf-b4fa4c6f4cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Managers">
+      <UniqueIdentifier>{3ef1d42c-6923-42a7-800f-a61a6550ef75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -99,6 +111,15 @@
     <ClInclude Include="Components\EllipseComponent.h">
       <Filter>Engine\Archivos de encabezado\Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\Game\Scenes\TestScene.h">
+      <Filter>Game\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Actors\MyEllipseActor.h">
+      <Filter>Game\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Managers\MyGameManager.h">
+      <Filter>Game\Managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -137,9 +158,18 @@
     <ClCompile Include="Components\EllipseComponent.cpp">
       <Filter>Engine\Archivos de origen\Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\Game\Scenes\TestScene.cpp">
+      <Filter>Game\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Actors\MyEllipseActor.cpp">
+      <Filter>Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Managers\MyGameManager.cpp">
+      <Filter>Game\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Win32ApiTest.rc">
+    <ResourceCompile Include="WiruEngine.rc">
       <Filter>Archivos de recursos</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -147,7 +177,7 @@
     <Image Include="small.ico">
       <Filter>Archivos de recursos</Filter>
     </Image>
-    <Image Include="Win32ApiTest.ico">
+    <Image Include="WiruEngine.ico">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>

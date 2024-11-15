@@ -31,7 +31,7 @@ HRESULT MainWindow::CreateGraphicsResources()
 
         if (SUCCEEDED(hr))
         {
-            pGameManager = GameManager::GetInstance();
+            pGameManager = GameManager::GetInstance<GameManager>();
             pGameManager->InitGameManager(pRenderTarget, this);
             pGameManager->InitScene();
             pGameManager->StartScene();

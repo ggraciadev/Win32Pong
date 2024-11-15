@@ -19,7 +19,7 @@ Actor::~Actor() {
 }
 
 void Actor::Init() {
-	ID2D1HwndRenderTarget* renderTarget = GameManager::GetInstance()->GetRenderTarget();
+	ID2D1HwndRenderTarget* renderTarget = GameManager::GetInstance<GameManager>()->GetRenderTarget();
 	if (renderTarget != NULL) {
 		pRenderTarget = renderTarget;
 		int size = pActorComponents.size();

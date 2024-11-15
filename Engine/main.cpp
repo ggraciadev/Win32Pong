@@ -3,7 +3,7 @@
 #endif 
 
 #include "./Windows/MainWindow.h"
-#include "./Managers/GameManager.h"
+#include "../Game/Managers/MyGameManager.h"
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
 {
@@ -20,7 +20,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
 
     MSG msg = { };
 
-    GameManager* gameManager = GameManager::GetInstance();
+    MyGameManager* gameManager = (MyGameManager*)GameManager::GetInstance<MyGameManager>();
 
     LARGE_INTEGER cpu_frequency;
     QueryPerformanceFrequency(&cpu_frequency);

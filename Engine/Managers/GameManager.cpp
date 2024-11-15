@@ -6,18 +6,9 @@ GameManager::GameManager() {
 
 GameManager::~GameManager() {
 	pSceneInitialized = false;
-	delete pEllipseActor;
-	pEllipseActor = NULL;
 }
 
 GameManager* GameManager::pInstance = nullptr;
-
-GameManager* GameManager::GetInstance() {
-	if (pInstance == nullptr) {
-		pInstance = new GameManager();
-	}
-	return pInstance;
-}
 
 void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window) {
 	pRenderTarget = renderTarget;
@@ -25,29 +16,38 @@ void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindo
 }
 
 void GameManager::InitScene() {
-	pEllipseActor = new EllipseActor();
-	pEllipseActor->Init();
-
-	pSceneInitialized = true;
+	if (pCurrentScene != NULL) {
+		pCurrentScene->Init();
+		pSceneInitialized = true;
+	}
 }
 
 void GameManager::StartScene() {
-	pEllipseActor->BeginPlay();
+	if (pCurrentScene != NULL) {
+		pCurrentScene->BeginPlay();
+	}
 
 }
 
 void GameManager::UpdateScene(float deltaTime) {
 	if (!pSceneInitialized) { return; }
-	if (pEllipseActor != NULL) {
-		pEllipseActor->Tick(deltaTime);
+	if (pCurrentScene != NULL) {
+		pCurrentScene->Tick(deltaTime);
 	}
 }
 
 void GameManager::RenderScene() {
 	if (!pSceneInitialized) { return; }
 	pMainWindow->StartRender();
-	if (pEllipseActor != NULL) {
-		pEllipseActor->Draw();
+	if (pCurrentScene != NULL) {
+		pCurrentScene->Draw();
 	}
 	pMainWindow->EndRender();
+}
+void GameManager::SetCurrentScene(Scene* scene) {
+	if (pCurrentScene != NULL) {
+		delete pCurrentScene;
+		pCurrentScene = NULL;
+	}
+	pCurrentScene = scene;
 }

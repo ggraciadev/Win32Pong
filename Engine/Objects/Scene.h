@@ -22,7 +22,7 @@ This event is called when the game starts
 /**
 This event is called to initialize a Scene
 */
-    virtual void Init();
+    void Init();
 
 /**
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.

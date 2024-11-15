@@ -1,19 +1,23 @@
 #pragma once
 #include "../Objects/EllipseActor.h"
 #include "../Windows/MainWindow.h"
+#include "../Objects/Scene.h"
 
 // The GameManager is the class responsible of managin all the game. Is a Singleton to ensure that only exists one copy of it
+
 class GameManager {
 private: 
-	static GameManager* pInstance;			// Current instance of the Singleton
+	static GameManager*		pInstance;					// Current instance of the Singleton
 
-	ID2D1HwndRenderTarget* pRenderTarget;	// Render target that will be used to render the game
-	EllipseActor* pEllipseActor;			
-	MainWindow* pMainWindow;				// A reference to the Main Window 
+	ID2D1HwndRenderTarget*	pRenderTarget;				// Render target that will be used to render the game		
+	MainWindow*				pMainWindow;				// A reference to the Main Window 
 
-	bool pRunning = false;					// If the game is still running or not
-	bool pSceneInitialized = false;			// If the scene is initialized
+	Scene*					pCurrentScene;				// A reference to the current scene
 
+	bool					pRunning = false;			// If the game is still running or not
+	bool					pSceneInitialized = false;	// If the scene is initialized
+
+protected:
 	GameManager();
 
 public:
@@ -23,7 +27,10 @@ public:
 * Creates an instance of the current GameManager, if not existis, and returns it
 * @return A reference of the current GameManager instance
 */
-	static GameManager* GetInstance();
+	template< class T> 
+	static T* GetInstance();
+
+
 	void InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window);
 
 
@@ -47,7 +54,7 @@ public:
 /**
 This method is called to create and initialize the current scene
 */
-	void InitScene();
+	virtual void InitScene();
 
 /**
 This method is called when the current Scene starts
@@ -61,7 +68,22 @@ This method is called when the current Scene starts
 	void UpdateScene(float deltaTime);
 
 /**
+* This methos is called to set the current scene
+* @param scene: The new current scene
+*/
+	void SetCurrentScene(Scene* scene);
+
+/**
 This method is called to render the current Scene
 */
 	void RenderScene();
 };
+
+
+template<class T>
+T* GameManager::GetInstance() {
+	if (pInstance == nullptr) {
+		pInstance = new T();
+	}
+	return (T*)(pInstance);
+}
