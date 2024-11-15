@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <Keyword>Win32Proj</Keyword>
+    <Keyword>WiruEngine</Keyword>
     <ProjectGuid>{7a45e698-7ae3-4fb8-8ed6-4e33453c3967}</ProjectGuid>
     <RootNamespace>Win32ApiTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -127,41 +127,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Actor.h" />
-    <ClInclude Include="ActorComponent.h" />
-    <ClInclude Include="BaseWindow.h" />
-    <ClInclude Include="EllipseActor.h" />
-    <ClInclude Include="EllipseComponent.h" />
+    <ClInclude Include="Components\ActorComponent.h" />
+    <ClInclude Include="Components\DrawableShapeComponent.h" />
+    <ClInclude Include="Components\EllipseComponent.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="GameManager.h" />
-    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Managers\GameManager.h" />
+    <ClInclude Include="Managers\SceneManager.h" />
+    <ClInclude Include="Objects\Actor.h" />
+    <ClInclude Include="Objects\EllipseActor.h" />
+    <ClInclude Include="Objects\Scene.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="DrawableShapeComponent.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="Transform.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Utils\Transform.h" />
+    <ClInclude Include="Utils\Utils.h" />
+    <ClInclude Include="Utils\Vector2D.h" />
     <ClInclude Include="Win32ApiTest.h" />
+    <ClInclude Include="Windows\BaseWindow.h" />
+    <ClInclude Include="Windows\MainWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
-    <ClCompile Include="ActorComponent.cpp" />
-    <ClCompile Include="DrawableShapeComponent.cpp" />
-    <ClCompile Include="EllipseActor.cpp" />
-    <ClCompile Include="EllipseComponent.cpp" />
-    <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Components\ActorComponent.cpp" />
+    <ClCompile Include="Components\DrawableShapeComponent.cpp" />
+    <ClCompile Include="Components\EllipseComponent.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="Managers\GameManager.cpp" />
+    <ClCompile Include="Objects\Actor.cpp" />
+    <ClCompile Include="Objects\EllipseActor.cpp" />
+    <ClCompile Include="Objects\Scene.cpp" />
+    <ClCompile Include="Utils\Transform.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
+    <ClCompile Include="Utils\Vector2D.cpp" />
+    <ClCompile Include="Windows\MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Win32ApiTest.rc" />
+    <ResourceCompile Include="WiruEngine.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="small.ico" />
-    <Image Include="Win32ApiTest.ico" />
+    <Image Include="WiruEngine.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

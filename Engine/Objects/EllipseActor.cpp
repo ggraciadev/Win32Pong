@@ -1,5 +1,5 @@
 #include "EllipseActor.h"
-#include "EllipseComponent.h"
+#include "../Components/EllipseComponent.h"
 
 EllipseActor::EllipseActor() {
 	pEllipseComponent = new EllipseComponent();

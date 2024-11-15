@@ -10,8 +10,8 @@ public:
 
 
 protected:
-	D2D1_COLOR_F			pColor;			// Color of the DrawableShape
-	ID2D1SolidColorBrush*	pBrush = NULL;	// Solid Color Brush of the DrawableShape
+	D2D1_COLOR_F			pColor = D2D1::ColorF(0.8f, 0.8f, 0.8f);	// Color of the DrawableShape
+	ID2D1SolidColorBrush*	pBrush = NULL;								// Solid Color Brush of the DrawableShape
 
 public:
 /**
@@ -22,7 +22,7 @@ public:
  * @param actor:  a reference to the owner Actor.
  * @param transform(optional): the position, rotation and scale relative to the relative actor this ActorComponent should start with
  */
-	virtual void Init(Actor* actor, const Transform& transform = Transform(Vector2D(0, 0), 0, Vector2D(1, 1)));
+	virtual void Init(Actor* actor);
 
 /**
  * Initalize the DrawableShapeComponent with the reference of its owner and a inital transform
@@ -33,7 +33,7 @@ public:
  * @param transform: the position, rotation and scale relative to the relative actor this ActorComponent should start with
  * @param color: the initial color of the DrawableShape
  */
-	virtual void Init(Actor* actor, const Transform& transform, D2D1_COLOR_F color);
+	virtual void Init(Actor* actor, D2D1_COLOR_F color);
 
 	D2D1_COLOR_F GetColor() const { return pColor; }
 	inline void SetColor(D2D1_COLOR_F color) { pColor = color; }

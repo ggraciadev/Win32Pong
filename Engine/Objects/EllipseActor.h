@@ -1,6 +1,6 @@
 #pragma once
 #include "Actor.h"
-#include "EllipseComponent.h"
+#include "../Components/EllipseComponent.h"
 
 class EllipseActor : public Actor
 {

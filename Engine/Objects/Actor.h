@@ -1,5 +1,5 @@
 #pragma once
-#include "Transform.h"
+#include "../Utils/Transform.h"
 #include <vector>
 #include <d2d1.h>
 
@@ -13,6 +13,7 @@ public:
     virtual ~Actor();
 
 protected:
+    Actor*                          pParentActor = NULL;    // The Actor that is attached to
     Transform                       pTransform;             // The Transform of this Actor
     std::vector<ActorComponent*>    pActorComponents;       // Components of this Actor
     ID2D1HwndRenderTarget*          pRenderTarget = NULL;   // The render target that will be used to render this Actor
@@ -36,7 +37,7 @@ This event is called when the game starts or when the owner Actor is spawned
 /**
 This event is called when the game starts or when the owner Actor is spawned
 */
-    virtual void Init(ID2D1HwndRenderTarget* renderTarget, const Transform& transform = Transform(Vector2D(0, 0), 0, Vector2D(1, 1)));
+    virtual void Init();
     
 /**
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.

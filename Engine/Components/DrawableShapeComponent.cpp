@@ -1,7 +1,7 @@
 #include "DrawableShapeComponent.h"
 #include <d2d1.h>
-#include "Actor.h"
-#include "Utils.h"
+#include "../Objects/Actor.h"
+#include "../Utils/Utils.h"
 
 DrawableShapeComponent::DrawableShapeComponent() {
 	pIsDrawable = true;
@@ -11,12 +11,12 @@ DrawableShapeComponent::~DrawableShapeComponent() {
 	
 }
 
-void DrawableShapeComponent::Init(Actor* actor, const Transform& transform) {
-	DrawableShapeComponent::Init(actor, transform, D2D1::ColorF(0.8f, 0.8f, 0.8f));
+void DrawableShapeComponent::Init(Actor* actor) {
+	DrawableShapeComponent::Init(actor, D2D1::ColorF(0.8f, 0.8f, 0.8f));
 }
 
-void DrawableShapeComponent::Init(Actor* actor, const Transform& transform, D2D1_COLOR_F color) {
-	ActorComponent::Init(actor, transform);
+void DrawableShapeComponent::Init(Actor* actor, D2D1_COLOR_F color) {
+	ActorComponent::Init(actor);
 	pColor = color;
 	ID2D1HwndRenderTarget* renderTarget = pActor->GetRenderTarget();
 	if (renderTarget != NULL) {

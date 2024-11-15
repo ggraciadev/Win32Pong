@@ -1,5 +1,5 @@
 #pragma once
-#include "Transform.h"
+#include "../Utils/Transform.h"
 #include <d2d1.h>
 
 class Actor;
@@ -31,14 +31,13 @@ This event is called at the begining of the destructor method
 public:
 
 /**
- * Initalize the ActorComponent with the reference of its owner and a inital transform 
+ * Initalize the ActorComponent with the reference of its owner
  *
  * Default Transform is at Position(0,0), Rotation(0) and Scale(1,1)
  *
  * @param actor:  a reference to the owner Actor.
- * @param transform(optional): the position, rotation and scale relative to the relative actor this ActorComponent should start with
  */
-	virtual void Init(Actor* actor, const Transform& transform = Transform(Vector2D(0,0), 0, Vector2D(1,1)));
+	virtual void Init(Actor* actor);
 
 /**
 This method checks if the component should be rendered and calls the Draw method to be renedered.

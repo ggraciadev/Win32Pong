@@ -1,8 +1,9 @@
 #include "Actor.h"
-#include "ActorComponent.h"
+#include "../Components/ActorComponent.h"
+#include "../Managers/GameManager.h"
 
 Actor::Actor() {
-	//Init();
+	SetTransform(Transform(Vector2D(0, 0), 0, Vector2D(1, 1)));
 }
 
 Actor::~Actor() {
@@ -17,12 +18,14 @@ Actor::~Actor() {
 	}
 }
 
-void Actor::Init(ID2D1HwndRenderTarget* renderTarget, const Transform& transform) {
-	SetTransform(transform);
-	pRenderTarget = renderTarget;
-	int size = pActorComponents.size();
-	for (int i = 0; i < size; ++i) {
-		pActorComponents[i]->Init(this, transform);
+void Actor::Init() {
+	ID2D1HwndRenderTarget* renderTarget = GameManager::GetInstance()->GetRenderTarget();
+	if (renderTarget != NULL) {
+		pRenderTarget = renderTarget;
+		int size = pActorComponents.size();
+		for (int i = 0; i < size; ++i) {
+			pActorComponents[i]->Init(this);
+		}
 	}
 }
 

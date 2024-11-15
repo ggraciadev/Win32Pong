@@ -2,7 +2,9 @@
 
 
 ActorComponent::ActorComponent() {
-
+	pTransform.SetPosition(Vector2D(0, 0));
+	pTransform.SetRotation(0);
+	pTransform.SetScale(Vector2D(1, 1));
 }
 
 
@@ -10,11 +12,8 @@ ActorComponent::~ActorComponent() {
 
 }
 
-void ActorComponent::Init(Actor* actor, const Transform& transform) {
+void ActorComponent::Init(Actor* actor) {
 	pActor = actor;
-	pTransform.SetPosition(transform.GetPosition());
-	pTransform.SetRotation(transform.GetRotation());
-	pTransform.SetScale(transform.GetScale());
 }
 
 void ActorComponent::SetComponentPosition(Vector2D position) {

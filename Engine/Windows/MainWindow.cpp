@@ -1,5 +1,6 @@
 #include "MainWindow.h"
-#include "GameManager.h"
+#include "../Managers/GameManager.h"
+#include "../Utils/Utils.h"
 
 void MainWindow::CalculateLayout()
 {

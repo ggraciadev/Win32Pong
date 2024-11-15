@@ -1,6 +1,6 @@
 #pragma once
-#include "EllipseActor.h"
-#include "MainWindow.h"
+#include "../Objects/EllipseActor.h"
+#include "../Windows/MainWindow.h"
 
 // The GameManager is the class responsible of managin all the game. Is a Singleton to ensure that only exists one copy of it
 class GameManager {
@@ -26,6 +26,12 @@ public:
 	static GameManager* GetInstance();
 	void InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window);
 
+
+/**
+* Returns the render target
+* @return The render target
+*/
+	ID2D1HwndRenderTarget* GetRenderTarget() const { return pRenderTarget; }
 /**
 * Returns if the Game is still running or not
 * @return Returns if the Game is still running or not

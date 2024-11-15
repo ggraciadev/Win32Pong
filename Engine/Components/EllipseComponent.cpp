@@ -1,5 +1,5 @@
 #include "EllipseComponent.h"
-#include "Actor.h"
+#include "../Objects/Actor.h"
 
 EllipseComponent::EllipseComponent() {
 	

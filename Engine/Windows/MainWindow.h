@@ -4,12 +4,8 @@
 #pragma comment(lib, "d2d1")
 
 #include "BaseWindow.h"
-#include "EllipseActor.h"
-#include "Utils.h"
 
 class GameManager;
-
-
 
 class MainWindow : public BaseWindow<MainWindow>
 {

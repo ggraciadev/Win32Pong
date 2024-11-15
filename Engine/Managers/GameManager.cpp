@@ -26,7 +26,7 @@ void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindo
 
 void GameManager::InitScene() {
 	pEllipseActor = new EllipseActor();
-	pEllipseActor->Init(pRenderTarget, Transform(Vector2D(5, 5), 0, Vector2D(1, 1)));
+	pEllipseActor->Init();
 
 	pSceneInitialized = true;
 }

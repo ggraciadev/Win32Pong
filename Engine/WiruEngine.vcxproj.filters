@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{7a24f3a7-19a0-4c0f-b916-6c62c580c227}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de encabezado">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Engine\Archivos de encabezado\Components">
+      <UniqueIdentifier>{43d42b1e-ce80-4d9f-a409-720202e13f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de encabezado\Managers">
+      <UniqueIdentifier>{40ba5fad-9e14-4145-aa80-231560c5bc95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de encabezado\Objects">
+      <UniqueIdentifier>{1368d58a-6fde-463a-a6b3-18d86b95949a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de encabezado\Utils">
+      <UniqueIdentifier>{c4dcc582-341c-43a0-b232-56e001c299de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de encabezado\Windows">
+      <UniqueIdentifier>{b04f1556-78b1-4dbe-8217-f86011781585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine\Archivos de origen\Components">
+      <UniqueIdentifier>{b9dc47e9-0593-461e-a269-8eaf699336f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de origen\Managers">
+      <UniqueIdentifier>{ea4c0f53-1257-43fb-aace-e7d9fbdd994e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de origen\Windows">
+      <UniqueIdentifier>{82f6b3df-131c-4f95-97d2-714a9e9fb7df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de origen\Utils">
+      <UniqueIdentifier>{22989d93-ad03-4e6b-b826-26e16c4f7ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Archivos de origen\Objects">
+      <UniqueIdentifier>{c1595ab9-e4b8-479a-bcb1-5a31c98647b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Engine\Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Engine\Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Engine\Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32ApiTest.h">
+      <Filter>Engine\Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\ActorComponent.h">
+      <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\DrawableShapeComponent.h">
+      <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\GameManager.h">
+      <Filter>Engine\Archivos de encabezado\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\SceneManager.h">
+      <Filter>Engine\Archivos de encabezado\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Actor.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\EllipseActor.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Scene.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Transform.h">
+      <Filter>Engine\Archivos de encabezado\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Utils.h">
+      <Filter>Engine\Archivos de encabezado\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vector2D.h">
+      <Filter>Engine\Archivos de encabezado\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\BaseWindow.h">
+      <Filter>Engine\Archivos de encabezado\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\MainWindow.h">
+      <Filter>Engine\Archivos de encabezado\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\EllipseComponent.h">
+      <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Engine\Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Actor.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\EllipseActor.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Scene.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Transform.cpp">
+      <Filter>Engine\Archivos de origen\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Utils.cpp">
+      <Filter>Engine\Archivos de origen\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Vector2D.cpp">
+      <Filter>Engine\Archivos de origen\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\MainWindow.cpp">
+      <Filter>Engine\Archivos de origen\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\GameManager.cpp">
+      <Filter>Engine\Archivos de origen\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\ActorComponent.cpp">
+      <Filter>Engine\Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\DrawableShapeComponent.cpp">
+      <Filter>Engine\Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\EllipseComponent.cpp">
+      <Filter>Engine\Archivos de origen\Components</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Win32ApiTest.rc">
+      <Filter>Archivos de recursos</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Win32ApiTest.ico">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
