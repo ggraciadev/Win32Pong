@@ -13,9 +13,12 @@ void EllipseComponent::UpdateShape() {
 	pEllipse.radiusY = pEllipseRadius.GetY() * pActor->GetTransform()->GetScale().GetY() * pTransform.GetScale().GetY();
 }
 
-void EllipseComponent::Draw(ID2D1HwndRenderTarget* renderTarget) {
-	DrawableShapeComponent::Draw(renderTarget);
-	renderTarget->FillEllipse(pEllipse, pBrush);
+void EllipseComponent::Draw() {
+	ID2D1HwndRenderTarget* renderTarget = pActor->GetRenderTarget();
+	if (renderTarget != NULL) {
+		DrawableShapeComponent::Draw(renderTarget);
+		renderTarget->FillEllipse(pEllipse, pBrush);
+	}
 }
 
 void EllipseComponent::BeginPlay() {

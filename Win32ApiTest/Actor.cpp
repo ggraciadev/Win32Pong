@@ -17,16 +17,12 @@ Actor::~Actor() {
 	}
 }
 
-void Actor::Init() {
-	
-}
-
-void Actor::Init(const Transform& transform, ID2D1HwndRenderTarget* renderTarget) {
+void Actor::Init(ID2D1HwndRenderTarget* renderTarget, const Transform& transform) {
 	SetTransform(transform);
 	pRenderTarget = renderTarget;
 	int size = pActorComponents.size();
 	for (int i = 0; i < size; ++i) {
-		pActorComponents[i]->Init(this, transform, renderTarget);
+		pActorComponents[i]->Init(this, transform);
 	}
 }
 
@@ -61,6 +57,6 @@ void Actor::Tick(float deltaTime) {
 void Actor::Draw() {
 	int size = pActorComponents.size();
 	for (int i = 0; i < size; ++i) {
-		pActorComponents[i]->SafeDraw(pRenderTarget);
+		pActorComponents[i]->SafeDraw();
 	}
 }

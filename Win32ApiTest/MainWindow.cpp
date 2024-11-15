@@ -45,7 +45,7 @@ HRESULT MainWindow::CreateGraphicsResources()
 
 void MainWindow::DiscardGraphicsResources()
 {
-    SafeDestroy(&pRenderTarget);
+    SafeRelease(&pRenderTarget);
 }
 
 void MainWindow::StartRender() {
@@ -118,7 +118,7 @@ LRESULT MainWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_DESTROY:
         
         DiscardGraphicsResources();
-        SafeDestroy(&pFactory);
+        SafeRelease(&pFactory);
         PostQuitMessage(0);
         return 0;
 

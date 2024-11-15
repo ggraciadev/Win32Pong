@@ -10,12 +10,7 @@ ActorComponent::~ActorComponent() {
 
 }
 
-
-void ActorComponent::Init(Actor* actor) {
-	pActor = actor;
-}
-
-void ActorComponent::Init(Actor* actor, const Transform& transform, ID2D1HwndRenderTarget* renderTarget) {
+void ActorComponent::Init(Actor* actor, const Transform& transform) {
 	pActor = actor;
 	pTransform.SetPosition(transform.GetPosition());
 	pTransform.SetRotation(transform.GetRotation());
@@ -40,8 +35,8 @@ void ActorComponent::SafeTick(float deltaTime) {
 	}
 }
 
-void ActorComponent::SafeDraw(ID2D1HwndRenderTarget* renderTarget) {
+void ActorComponent::SafeDraw() {
 	if (pIsDrawable) {
-		Draw(renderTarget);
+		Draw();
 	}
 }
