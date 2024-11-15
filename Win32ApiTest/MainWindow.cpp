@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "Actor.h"
 
 void MainWindow::CalculateLayout()
 {
@@ -8,7 +9,6 @@ void MainWindow::CalculateLayout()
         const float x = size.width / 2;
         const float y = size.height / 2;
         const float radius = min(x, y);
-        ellipse = D2D1::Ellipse(D2D1::Point2F(x, y), radius, radius);
     }
 }
 
@@ -27,11 +27,17 @@ HRESULT MainWindow::CreateGraphicsResources()
             D2D1::HwndRenderTargetProperties(m_hwnd, size),
             &pRenderTarget);
 
+
         if (SUCCEEDED(hr))
         {
-            const D2D1_COLOR_F color = D2D1::ColorF(1.0f, 1.0f, 0);
-            hr = pRenderTarget->CreateSolidColorBrush(color, &pBrush);
-
+            /*pEllipseActor = new EllipseActor();
+            pEllipseActor->Init(Transform(Vector2D(5, 5), 0, Vector2D(1, 1)), pRenderTarget);
+            pEllipseActor->BeginPlay();
+            */
+            pGameManager = GameManager::GetInstance();
+            pGameManager->InitGameManager(pRenderTarget);
+            pGameManager->InitScene();
+            pGameManager->StartScene();
             if (SUCCEEDED(hr))
             {
                 CalculateLayout();
@@ -44,7 +50,6 @@ HRESULT MainWindow::CreateGraphicsResources()
 void MainWindow::DiscardGraphicsResources()
 {
     SafeDestroy(&pRenderTarget);
-    SafeDestroy(&pBrush);
 }
 
 void MainWindow::OnPaint()
@@ -58,7 +63,9 @@ void MainWindow::OnPaint()
         pRenderTarget->BeginDraw();
 
         pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::SkyBlue));
-        pRenderTarget->FillEllipse(ellipse, pBrush);
+        /*pEllipseActor->Tick(0);
+        pEllipseActor->Draw();*/
+        pGameManager->RenderScene();
 
         hr = pRenderTarget->EndDraw();
         if (FAILED(hr) || hr == D2DERR_RECREATE_TARGET)
@@ -97,10 +104,15 @@ LRESULT MainWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
         return 0;
 
     case WM_DESTROY:
+        
         DiscardGraphicsResources();
         SafeDestroy(&pFactory);
         PostQuitMessage(0);
         return 0;
+
+    case WM_CLOSE:
+        pGameManager->SetGameRunning(false);
+        break;
 
     case WM_PAINT:
         OnPaint();

@@ -3,6 +3,7 @@
 #endif 
 
 #include "MainWindow.h"
+#include "GameManager.h"
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
 {
@@ -18,11 +19,34 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
     // Run the message loop.
 
     MSG msg = { };
-    while (GetMessage(&msg, NULL, 0, 0))
+
+    GameManager* gameManager = GameManager::GetInstance();
+
+    LARGE_INTEGER cpu_frequency;
+    QueryPerformanceFrequency(&cpu_frequency);
+    LARGE_INTEGER last_counter;
+    QueryPerformanceCounter(&last_counter);
+
+    while (gameManager->IsGameRunning())
     {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
+        LARGE_INTEGER current_counter;
+        QueryPerformanceCounter(&current_counter);
+        int64_t counter_elapsed = current_counter.QuadPart - last_counter.QuadPart;
+        float delta = (float)counter_elapsed / (float)cpu_frequency.QuadPart;	// in seconds
+        last_counter = current_counter;
+
+        while (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
+        {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);		// Send message to the WindowProc (WindowCallback)
+        }
+
+        if (gameManager->IsGameRunning()) {
+            gameManager->UpdateScene(delta);
+            win.OnPaint();
+        }
     }
+    delete gameManager;
 
     return 0;
 }

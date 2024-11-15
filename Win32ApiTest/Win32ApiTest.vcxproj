@@ -127,21 +127,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="ActorComponent.h" />
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="Bitmap.h" />
-    <ClInclude Include="IDrawableComponent.h" />
+    <ClInclude Include="EllipseActor.h" />
+    <ClInclude Include="EllipseComponent.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="ISerializable.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="DrawableShapeComponent.h" />
-    <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Win32ApiTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="ActorComponent.cpp" />
+    <ClCompile Include="DrawableShapeComponent.cpp" />
+    <ClCompile Include="EllipseActor.cpp" />
+    <ClCompile Include="EllipseComponent.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Win32ApiTest.rc" />

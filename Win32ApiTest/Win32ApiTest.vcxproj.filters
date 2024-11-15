@@ -22,6 +22,21 @@
     <Filter Include="Archivos de encabezado\Components">
       <UniqueIdentifier>{d8421ac3-d921-4948-a5a1-6ad88aa7c518}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Objects">
+      <UniqueIdentifier>{006c8bfb-9d45-4576-8ba0-08faf7b69fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Utils">
+      <UniqueIdentifier>{b1160290-f86e-4aaf-86ca-ce860e93c3b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Utils">
+      <UniqueIdentifier>{94489052-812a-4727-8f32-a782228af736}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Objects">
+      <UniqueIdentifier>{e270159e-b5cb-4a44-9d3c-b58d164642ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Components">
+      <UniqueIdentifier>{f70e01d0-c32c-4e07-b3d8-fe88b16c4c31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -42,9 +57,6 @@
     <ClInclude Include="MainWindow.h">
       <Filter>Archivos de encabezado\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="IDrawableComponent.h">
-      <Filter>Archivos de encabezado\Components</Filter>
-    </ClInclude>
     <ClInclude Include="DrawableShapeComponent.h">
       <Filter>Archivos de encabezado\Components</Filter>
     </ClInclude>
@@ -54,8 +66,29 @@
     <ClInclude Include="ISerializable.h">
       <Filter>Archivos de encabezado\Components</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteComponent.h">
+    <ClInclude Include="Actor.h">
+      <Filter>Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Archivos de encabezado\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Archivos de encabezado\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Archivos de encabezado\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="EllipseComponent.h">
       <Filter>Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorComponent.h">
+      <Filter>Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="EllipseActor.h">
+      <Filter>Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +97,33 @@
     </ClCompile>
     <ClCompile Include="MainWindow.cpp">
       <Filter>Archivos de origen\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Archivos de origen\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Archivos de origen\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.cpp">
+      <Filter>Archivos de origen\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawableShapeComponent.cpp">
+      <Filter>Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="EllipseComponent.cpp">
+      <Filter>Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorComponent.cpp">
+      <Filter>Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="EllipseActor.cpp">
+      <Filter>Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
