@@ -1,5 +1,6 @@
 #pragma once
 #include "EllipseActor.h"
+#include "MainWindow.h"
 
 class GameManager {
 private: 
@@ -7,6 +8,8 @@ private:
 
 	ID2D1HwndRenderTarget* pRenderTarget;
 	EllipseActor* pEllipseActor;
+	MainWindow* pMainWindow;
+
 	bool pRunning;
 
 	bool pSceneInitialized = false;
@@ -15,7 +18,7 @@ private:
 public:
 	~GameManager();
 	static GameManager* GetInstance();
-	void InitGameManager(ID2D1HwndRenderTarget* renderTarget);
+	void InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window);
 
 	bool IsGameRunning() const { return pRunning; }
 	void SetGameRunning(bool running) { pRunning = false; }

@@ -43,7 +43,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
 
         if (gameManager->IsGameRunning()) {
             gameManager->UpdateScene(delta);
-            win.OnPaint();
+            gameManager->RenderScene();
         }
     }
     delete gameManager;

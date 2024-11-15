@@ -1,5 +1,5 @@
 #include "MainWindow.h"
-#include "Actor.h"
+#include "GameManager.h"
 
 void MainWindow::CalculateLayout()
 {
@@ -30,12 +30,8 @@ HRESULT MainWindow::CreateGraphicsResources()
 
         if (SUCCEEDED(hr))
         {
-            /*pEllipseActor = new EllipseActor();
-            pEllipseActor->Init(Transform(Vector2D(5, 5), 0, Vector2D(1, 1)), pRenderTarget);
-            pEllipseActor->BeginPlay();
-            */
             pGameManager = GameManager::GetInstance();
-            pGameManager->InitGameManager(pRenderTarget);
+            pGameManager->InitGameManager(pRenderTarget, this);
             pGameManager->InitScene();
             pGameManager->StartScene();
             if (SUCCEEDED(hr))
@@ -52,27 +48,43 @@ void MainWindow::DiscardGraphicsResources()
     SafeDestroy(&pRenderTarget);
 }
 
+void MainWindow::StartRender() {
+    HRESULT hr = CreateGraphicsResources();
+    if (SUCCEEDED(hr))
+    {
+        BeginPaint(m_hwnd, &pPaintStructure);
+
+        pRenderTarget->BeginDraw();
+
+        pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::SkyBlue));
+    }
+}
+void MainWindow::EndRender() {
+    HRESULT hr = pRenderTarget->EndDraw();
+    if (FAILED(hr) || hr == D2DERR_RECREATE_TARGET)
+    {
+        DiscardGraphicsResources();
+    }
+    EndPaint(m_hwnd, &pPaintStructure);
+}
+
 void MainWindow::OnPaint()
 {
     HRESULT hr = CreateGraphicsResources();
     if (SUCCEEDED(hr))
     {
-        PAINTSTRUCT ps;
-        BeginPaint(m_hwnd, &ps);
+        BeginPaint(m_hwnd, &pPaintStructure);
 
         pRenderTarget->BeginDraw();
 
         pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::SkyBlue));
-        /*pEllipseActor->Tick(0);
-        pEllipseActor->Draw();*/
-        pGameManager->RenderScene();
 
         hr = pRenderTarget->EndDraw();
         if (FAILED(hr) || hr == D2DERR_RECREATE_TARGET)
         {
             DiscardGraphicsResources();
         }
-        EndPaint(m_hwnd, &ps);
+        EndPaint(m_hwnd, &pPaintStructure);
     }
 }
 

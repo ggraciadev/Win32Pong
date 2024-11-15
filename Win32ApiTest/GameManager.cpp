@@ -19,8 +19,9 @@ GameManager* GameManager::GetInstance() {
 	return pInstance;
 }
 
-void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget) {
+void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window) {
 	pRenderTarget = renderTarget;
+	pMainWindow = window;
 }
 
 void GameManager::InitScene() {
@@ -44,7 +45,9 @@ void GameManager::UpdateScene(float deltaTime) {
 
 void GameManager::RenderScene() {
 	if (!pSceneInitialized) { return; }
+	pMainWindow->StartRender();
 	if (pEllipseActor != NULL) {
 		pEllipseActor->Draw();
 	}
+	pMainWindow->EndRender();
 }
