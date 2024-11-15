@@ -130,12 +130,10 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="ActorComponent.h" />
     <ClInclude Include="BaseWindow.h" />
-    <ClInclude Include="Bitmap.h" />
     <ClInclude Include="EllipseActor.h" />
     <ClInclude Include="EllipseComponent.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="ISerializable.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="DrawableShapeComponent.h" />

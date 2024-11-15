@@ -33,5 +33,5 @@ void DrawableShapeComponent::Draw(ID2D1HwndRenderTarget* renderTarget) {
 }
 
 void DrawableShapeComponent::EndPlay() {
-	SafeDestroy(&pBrush);
+	SafeRelease(&pBrush);
 }

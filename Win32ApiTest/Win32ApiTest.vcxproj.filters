@@ -60,12 +60,6 @@
     <ClInclude Include="DrawableShapeComponent.h">
       <Filter>Archivos de encabezado\Components</Filter>
     </ClInclude>
-    <ClInclude Include="Bitmap.h">
-      <Filter>Archivos de encabezado\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="ISerializable.h">
-      <Filter>Archivos de encabezado\Components</Filter>
-    </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>Archivos de encabezado\Objects</Filter>
     </ClInclude>
