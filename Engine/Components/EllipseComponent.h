@@ -37,18 +37,18 @@ This method is called just before Draw to update every shape positions.
 * This method returns a reference of the ellipse radius
 * @return A reference of the ellipse raudius of the EllipseComoponent
 */
-	Vector2D* GetEllipseRadius() { return &pEllipseRadius; }
+	inline Vector2D* GetEllipseRadius() { return &pEllipseRadius; }
 
 /**
 * This method sets a new value for the ellipse radius
 * @param The new ellipse radius as a Vector2D
 */
-	void SetEllipseRadius(const Vector2D& ellipseRadius) { pEllipseRadius = ellipseRadius; }
+	inline void SetEllipseRadius(const Vector2D& ellipseRadius) { pEllipseRadius = ellipseRadius; }
 
 /**
 * This method sets a new value for the ellipse radius
 * @param The new ellipse radius as two floats, one for the X value and another for the Y value
 */
-	void SetEllipseRadius(const float ellipseRadiusX, const float ellipseRadiusY) { SetEllipseRadius(Vector2D(ellipseRadiusX, ellipseRadiusY)); }
+	inline void SetEllipseRadius(const float ellipseRadiusX, const float ellipseRadiusY) { SetEllipseRadius(Vector2D(ellipseRadiusX, ellipseRadiusY)); }
 	
 };

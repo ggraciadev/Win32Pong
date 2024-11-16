@@ -1,11 +1,6 @@
 #include "MyGameManager.h"
-#include "../Scenes/TestScene.h"
+#include "MySceneManager.h"
 
-MyGameManager::MyGameManager() {
-
-}
-
-void MyGameManager::InitScene() {
-	SetCurrentScene(new TestScene());
-	GameManager::InitScene();
+void MyGameManager::CreateCustomSceneManager() {
+	pSceneManager = new MySceneManager();
 }

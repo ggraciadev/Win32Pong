@@ -8,7 +8,10 @@ DrawableShapeComponent::DrawableShapeComponent() {
 }
 
 DrawableShapeComponent::~DrawableShapeComponent() {
-	
+	if (pBrush != NULL) {
+		pBrush->Release();
+		pBrush = NULL;
+	}
 }
 
 void DrawableShapeComponent::Init(Actor* actor) {
@@ -22,6 +25,11 @@ void DrawableShapeComponent::Init(Actor* actor, D2D1_COLOR_F color) {
 	if (renderTarget != NULL) {
 		renderTarget->CreateSolidColorBrush(pColor, &pBrush);
 	}
+}
+
+void DrawableShapeComponent::SetColor(D2D1_COLOR_F color) {
+	pColor = color;
+	pBrush->SetColor(pColor);
 }
 
 void DrawableShapeComponent::BeginPlay() {

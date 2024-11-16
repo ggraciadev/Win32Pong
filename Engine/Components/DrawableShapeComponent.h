@@ -36,7 +36,7 @@ public:
 	virtual void Init(Actor* actor, D2D1_COLOR_F color);
 
 	D2D1_COLOR_F GetColor() const { return pColor; }
-	inline void SetColor(D2D1_COLOR_F color) { pColor = color; }
+	void SetColor(D2D1_COLOR_F color);
 
 /**
 This event is called when the game starts or when the owner Actor is spawned
