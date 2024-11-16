@@ -50,7 +50,7 @@ This event is for the logic of the component, the behaviour that has to be updat
 /**
 This event is for the rendering of the component if needed. This method should be overrided by every ActorComponent that uses it
 */
-	virtual void Draw(ID2D1HwndRenderTarget* renderTarget);
+	virtual void Draw();
 
 /**
 This method is called just before Draw to update every shape positions. This method should be overrided by every DrawableShapeComponent

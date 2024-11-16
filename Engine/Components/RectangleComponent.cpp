@@ -22,16 +22,15 @@ void RectangleComponent::UpdateShape() {
 }
 
 void RectangleComponent::Draw() {
+	DrawableShapeComponent::Draw();
 	ID2D1HwndRenderTarget* renderTarget = m_actor->GetRenderTarget();
 	if (renderTarget != NULL) {
-		DrawableShapeComponent::Draw(renderTarget);
 		renderTarget->FillRoundedRectangle(m_rectangle, m_brush);
 	}
 }
 
 void RectangleComponent::BeginPlay() {
 	DrawableShapeComponent::BeginPlay();
-	UpdateShape();
 }
 
 void RectangleComponent::EndPlay() {

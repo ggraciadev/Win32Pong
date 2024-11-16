@@ -136,6 +136,7 @@
     <ClInclude Include="Components\DrawableShapeComponent.h" />
     <ClInclude Include="Components\EllipseComponent.h" />
     <ClInclude Include="Components\RectangleComponent.h" />
+    <ClInclude Include="Components\TextBoxComponent.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Managers\GameManager.h" />
     <ClInclude Include="Managers\SceneManager.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Objects\EllipseActor.h" />
     <ClInclude Include="Objects\RectangleActor.h" />
     <ClInclude Include="Objects\Scene.h" />
+    <ClInclude Include="Objects\TextBoxActor.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Utils\Transform.h" />
@@ -162,6 +164,7 @@
     <ClCompile Include="Components\DrawableShapeComponent.cpp" />
     <ClCompile Include="Components\EllipseComponent.cpp" />
     <ClCompile Include="Components\RectangleComponent.cpp" />
+    <ClCompile Include="Components\TextBoxComponent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\GameManager.cpp" />
     <ClCompile Include="Managers\SceneManager.cpp" />
@@ -169,6 +172,7 @@
     <ClCompile Include="Objects\EllipseActor.cpp" />
     <ClCompile Include="Objects\RectangleActor.cpp" />
     <ClCompile Include="Objects\Scene.cpp" />
+    <ClCompile Include="Objects\TextBoxActor.cpp" />
     <ClCompile Include="Utils\Transform.cpp" />
     <ClCompile Include="Utils\Utils.cpp" />
     <ClCompile Include="Utils\Vector2D.cpp" />

@@ -15,7 +15,7 @@ DrawableShapeComponent::~DrawableShapeComponent() {
 }
 
 void DrawableShapeComponent::Init(Actor* actor) {
-	DrawableShapeComponent::Init(actor, D2D1::ColorF(0.8f, 0.8f, 0.8f));
+	Init(actor, D2D1::ColorF(0.8f, 0.8f, 0.8f));
 }
 
 void DrawableShapeComponent::Init(Actor* actor, D2D1_COLOR_F color) {
@@ -23,7 +23,8 @@ void DrawableShapeComponent::Init(Actor* actor, D2D1_COLOR_F color) {
 	m_color = color;
 	ID2D1HwndRenderTarget* renderTarget = m_actor->GetRenderTarget();
 	if (renderTarget != NULL) {
-		renderTarget->CreateSolidColorBrush(m_color, &m_brush);
+		HRESULT hr = renderTarget->CreateSolidColorBrush(m_color, &m_brush);
+		if (FAILED(hr)) return;
 	}
 }
 
@@ -33,10 +34,10 @@ void DrawableShapeComponent::SetColor(D2D1_COLOR_F color) {
 }
 
 void DrawableShapeComponent::BeginPlay() {
-
+	UpdateShape();
 }
 
-void DrawableShapeComponent::Draw(ID2D1HwndRenderTarget* renderTarget) {
+void DrawableShapeComponent::Draw() {
 	UpdateShape();
 }
 

@@ -1,6 +1,12 @@
 #include "Scene.h"
 #include <d2d1.h>
 #include <Windows.h>
+#include <dwrite.h>
+#include <string>
+#include "../Managers/GameManager.h"
+
+#pragma comment(lib, "d2d1")
+#pragma comment(lib, "dwrite")
 
 Scene::Scene() {
 
