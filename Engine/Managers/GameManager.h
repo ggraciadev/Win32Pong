@@ -56,6 +56,11 @@ Creates the instance of the Custom Scene Manager. Should be overrided in order t
 */
 	virtual void CreateCustomSceneManager() {};
 
+/**
+Creates the instance of the Custom Input Manager. Should be overrided in order to create a User Custom Input Manager
+*/
+	virtual void CreateCustomInputManager() {};
+
 	Scene* GetCurrentScene() const;
 	SceneManager* GetSceneManager() { return m_sceneManager; }
 	InputManager* GetInputManager() { return m_inputManager; }

@@ -28,6 +28,7 @@ void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindo
 
 void GameManager::CreateManagers() {
 	CreateCustomSceneManager();
+	CreateCustomInputManager();
 }
 
 void GameManager::StartGame() {
@@ -71,8 +72,6 @@ Scene* GameManager::GetCurrentScene() const{
 	else {
 		return NULL;
 	}
-
-
 }
 
 void GameManager::DespawnActor(Actor* actor) {
