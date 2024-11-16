@@ -1,4 +1,5 @@
-#pragma once
+#ifndef UTILS_HH
+#define UTILS_HH
 
 
 /**
@@ -12,3 +13,6 @@ template <class T> void SafeRelease(T** ppT)
         *ppT = NULL;
     }
 }
+
+#define CLAMP(a,x,y) max(min(a,y),x)
+#endif

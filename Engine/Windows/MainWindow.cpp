@@ -122,13 +122,14 @@ LRESULT MainWindow::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
         return 0;
 
     case WM_CLOSE:
-        pGameManager->SetGameRunning(false);
+        if (pGameManager != NULL) {
+            pGameManager->SetGameRunning(false);
+        }
         break;
 
     case WM_PAINT:
         OnPaint();
         return 0;
-
 
 
     case WM_SIZE:

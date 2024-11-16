@@ -1,7 +1,6 @@
 #include "DrawableShapeComponent.h"
 #include <d2d1.h>
 #include "../Objects/Actor.h"
-#include "../Utils/Utils.h"
 
 DrawableShapeComponent::DrawableShapeComponent() {
 	m_isDrawable = true;
@@ -42,5 +41,5 @@ void DrawableShapeComponent::Draw() {
 }
 
 void DrawableShapeComponent::EndPlay() {
-	SafeRelease(&m_brush);
+
 }

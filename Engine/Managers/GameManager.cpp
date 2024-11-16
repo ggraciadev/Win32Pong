@@ -50,6 +50,7 @@ void GameManager::StartScene() {
 void GameManager::UpdateScene(float deltaTime) {
 	if (!m_gameInitialized) { return; }
 	if (GetCurrentScene() != NULL) {
+		m_inputManager->UpdateInputState();
 		GetCurrentScene()->Tick(deltaTime);
 	}
 }

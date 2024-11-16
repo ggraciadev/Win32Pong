@@ -141,6 +141,27 @@
     <ClInclude Include="..\Game\Actors\ScoreBoard.h">
       <Filter>Game\Actors</Filter>
     </ClInclude>
+    <ClInclude Include="Objects\Pawn.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\PawnController.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\AIController.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\PlayerController.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Actors\MyPlayerController.h">
+      <Filter>Game\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Actors\Paddle.h">
+      <Filter>Game\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\InputManager.h">
+      <Filter>Engine\Archivos de encabezado\Managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -211,6 +232,27 @@
     </ClCompile>
     <ClCompile Include="..\Game\Actors\ScoreBoard.cpp">
       <Filter>Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Pawn.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\PawnController.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\AIController.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\PlayerController.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Actors\MyPlayerController.cpp">
+      <Filter>Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Actors\Paddle.cpp">
+      <Filter>Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\InputManager.cpp">
+      <Filter>Engine\Archivos de origen\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

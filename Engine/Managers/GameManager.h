@@ -2,6 +2,7 @@
 #include "../Objects/EllipseActor.h"
 #include "../Windows/MainWindow.h"
 #include "SceneManager.h"
+#include "InputManager.h"
 
 // The GameManager is the class responsible of managin all the game. Is a Singleton to ensure that only exists one copy of it
 
@@ -19,6 +20,7 @@ protected:
 	GameManager();
 
 	SceneManager*			m_sceneManager = NULL;		// A reference to the SceneManager
+	InputManager*			m_inputManager = NULL;		// A reference to the InputManager
 
 public:
 	~GameManager();
@@ -55,6 +57,8 @@ Creates the instance of the Custom Scene Manager. Should be overrided in order t
 	virtual void CreateCustomSceneManager() {};
 
 	Scene* GetCurrentScene() const;
+	SceneManager* GetSceneManager() { return m_sceneManager; }
+	InputManager* GetInputManager() { return m_inputManager; }
 
 /**
 * Returns the render target

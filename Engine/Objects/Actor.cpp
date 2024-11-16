@@ -59,3 +59,7 @@ void Actor::Draw() {
 		m_actorComponents[i]->SafeDraw();
 	}
 }
+
+void Actor::AddActorWorldOffset(Vector2D offset) {
+	m_transform.SetPosition(m_transform.GetPosition() + offset);
+}

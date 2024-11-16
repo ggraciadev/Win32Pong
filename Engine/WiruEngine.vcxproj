@@ -128,7 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Game\Actors\MyEllipseActor.h" />
+    <ClInclude Include="..\Game\Actors\MyPlayerController.h" />
     <ClInclude Include="..\Game\Actors\MyRectangleActor.h" />
+    <ClInclude Include="..\Game\Actors\Paddle.h" />
     <ClInclude Include="..\Game\Actors\ScoreBoard.h" />
     <ClInclude Include="..\Game\Managers\MyGameManager.h" />
     <ClInclude Include="..\Game\Managers\MySceneManager.h" />
@@ -140,9 +142,14 @@
     <ClInclude Include="Components\TextBoxComponent.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Managers\GameManager.h" />
+    <ClInclude Include="Managers\InputManager.h" />
     <ClInclude Include="Managers\SceneManager.h" />
     <ClInclude Include="Objects\Actor.h" />
+    <ClInclude Include="Objects\AIController.h" />
     <ClInclude Include="Objects\EllipseActor.h" />
+    <ClInclude Include="Objects\Pawn.h" />
+    <ClInclude Include="Objects\PawnController.h" />
+    <ClInclude Include="Objects\PlayerController.h" />
     <ClInclude Include="Objects\RectangleActor.h" />
     <ClInclude Include="Objects\Scene.h" />
     <ClInclude Include="Objects\TextBoxActor.h" />
@@ -157,7 +164,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Game\Actors\MyEllipseActor.cpp" />
+    <ClCompile Include="..\Game\Actors\MyPlayerController.cpp" />
     <ClCompile Include="..\Game\Actors\MyRectangleActor.cpp" />
+    <ClCompile Include="..\Game\Actors\Paddle.cpp" />
     <ClCompile Include="..\Game\Actors\ScoreBoard.cpp" />
     <ClCompile Include="..\Game\Managers\MyGameManager.cpp" />
     <ClCompile Include="..\Game\Managers\MySceneManager.cpp" />
@@ -169,9 +178,14 @@
     <ClCompile Include="Components\TextBoxComponent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\GameManager.cpp" />
+    <ClCompile Include="Managers\InputManager.cpp" />
     <ClCompile Include="Managers\SceneManager.cpp" />
     <ClCompile Include="Objects\Actor.cpp" />
+    <ClCompile Include="Objects\AIController.cpp" />
     <ClCompile Include="Objects\EllipseActor.cpp" />
+    <ClCompile Include="Objects\Pawn.cpp" />
+    <ClCompile Include="Objects\PawnController.cpp" />
+    <ClCompile Include="Objects\PlayerController.cpp" />
     <ClCompile Include="Objects\RectangleActor.cpp" />
     <ClCompile Include="Objects\Scene.cpp" />
     <ClCompile Include="Objects\TextBoxActor.cpp" />

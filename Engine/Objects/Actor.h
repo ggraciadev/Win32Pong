@@ -57,6 +57,8 @@ This event is for the rendering of the Actor. This method automaticaly calls the
     Transform* GetTransform() { return &m_transform; }
     void SetTransform(const Transform& transform);
 
+    void AddActorWorldOffset(Vector2D offset);
+
 /**
 * This method returns a reference of the render target
 * @return A reference of the render target of the Actor
