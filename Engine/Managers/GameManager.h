@@ -93,6 +93,8 @@ This method is called when the current Scene starts
 This method is called to render the current Scene
 */
 	void RenderScene();
+
+	Vector2D GetWindowSize();
 };
 
 

@@ -77,3 +77,13 @@ Scene* GameManager::GetCurrentScene() const{
 void GameManager::DespawnActor(Actor* actor) {
 	GetCurrentScene()->DestroyActor(actor);
 }
+
+Vector2D GameManager::GetWindowSize() { 
+	Vector2D result;
+	if (m_renderTarget != NULL) {
+		D2D1_SIZE_F size = m_renderTarget->GetSize();
+		result.SetX(size.width);
+		result.SetY(size.height);
+	}
+	return result;
+}

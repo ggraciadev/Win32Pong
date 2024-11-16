@@ -93,19 +93,25 @@ void TextBoxComponent::SetText(const std::wstring& text) {
 
 }
 
-void TextBoxComponent::SetFontFamily(const std::wstring& fontFamily) {
+void TextBoxComponent::SetFontFamily(const std::wstring& fontFamily, bool updateTextFormat) {
 	m_fontFamily = fontFamily;
-	UpdateTextFormat();
+	if (updateTextFormat) {
+		UpdateTextFormat();
+	}
 }
 
 
-void TextBoxComponent::SetTextBoxSize(const Vector2D& textBoxSize) {
+void TextBoxComponent::SetTextBoxSize(const Vector2D& textBoxSize, bool updateTextFormat) {
 	m_textBoxSize = textBoxSize;
-	UpdateTextFormat();
+	if (updateTextFormat) {
+		UpdateTextFormat();
+	}
 }
 
 
-void TextBoxComponent::SetFontSize(const float fontSize) {
+void TextBoxComponent::SetFontSize(const float fontSize, bool updateTextFormat) {
 	m_fontSize = fontSize;
-	UpdateTextFormat();
+	if (updateTextFormat) {
+		UpdateTextFormat();
+	}
 }

@@ -77,8 +77,9 @@ This method is called just before Draw to update every shape positions.
 /**
 * This method is to set a new value to the text to reneder
 * @param New vaue of the text
+* @param updateTextFormat (optional): if the text format should be updated or not (default = true)
 */
-	void SetFontFamily(const std::wstring& fontFamily);
+	void SetFontFamily(const std::wstring& fontFamily, bool updateTextFormat = true);
 	
 
 /**
@@ -90,8 +91,9 @@ This method is called just before Draw to update every shape positions.
 /**
 * This method is to set a new value to the text to reneder
 * @param New vaue of the text
+* @param updateTextFormat (optional): if the text format should be updated or not (default = true)
 */
-	void SetTextBoxSize(const Vector2D& textBoxSize);
+	void SetTextBoxSize(const Vector2D& textBoxSize, bool updateTextFormat = true);
 
 
 	/**
@@ -103,7 +105,8 @@ This method is called just before Draw to update every shape positions.
 	/**
 	* This method is to set a new value to the font size
 	* @param New vaue of the font size
+	* @param updateTextFormat (optional): if the text format should be updated or not (default = true)
 	*/
-	void SetFontSize(const float fontSize);
+	void SetFontSize(const float fontSize, bool updateTextFormat = true);
 
 };

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="..\Game\Actors\MyEllipseActor.h" />
     <ClInclude Include="..\Game\Actors\MyRectangleActor.h" />
+    <ClInclude Include="..\Game\Actors\ScoreBoard.h" />
     <ClInclude Include="..\Game\Managers\MyGameManager.h" />
     <ClInclude Include="..\Game\Managers\MySceneManager.h" />
     <ClInclude Include="..\Game\Scenes\TestScene.h" />
@@ -157,6 +158,7 @@
   <ItemGroup>
     <ClCompile Include="..\Game\Actors\MyEllipseActor.cpp" />
     <ClCompile Include="..\Game\Actors\MyRectangleActor.cpp" />
+    <ClCompile Include="..\Game\Actors\ScoreBoard.cpp" />
     <ClCompile Include="..\Game\Managers\MyGameManager.cpp" />
     <ClCompile Include="..\Game\Managers\MySceneManager.cpp" />
     <ClCompile Include="..\Game\Scenes\TestScene.cpp" />

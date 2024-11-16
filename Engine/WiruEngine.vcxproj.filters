@@ -138,6 +138,9 @@
     <ClInclude Include="Objects\TextBoxActor.h">
       <Filter>Engine\Archivos de encabezado\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="..\Game\Actors\ScoreBoard.h">
+      <Filter>Game\Actors</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -205,6 +208,9 @@
     </ClCompile>
     <ClCompile Include="Objects\TextBoxActor.cpp">
       <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Actors\ScoreBoard.cpp">
+      <Filter>Game\Actors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

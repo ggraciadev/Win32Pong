@@ -1,6 +1,7 @@
 #include "TestScene.h"
 #include "../Actors/MyEllipseActor.h"
 #include "../Actors/MyRectangleActor.h"
+#include "../Actors/ScoreBoard.h"
 #include "../Managers/MyGameManager.h"
 
 
@@ -11,5 +12,6 @@ void TestScene::Init() {
 	MyRectangleActor* rectangle = (MyRectangleActor*)MyGameManager::GetInstance<MyGameManager>()->SpawnActor<MyRectangleActor>();
 	rectangle->SetTransform(Transform(Vector2D(50, 50), 0, Vector2D(1, 1)));
 	
+	ScoreBoard* scoreBoard = (ScoreBoard*)MyGameManager::GetInstance<MyGameManager>()->SpawnActor<ScoreBoard>();
 	Scene::Init();
 }
