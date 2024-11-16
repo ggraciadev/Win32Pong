@@ -4,8 +4,8 @@
 
 class Vector2D {
 protected:
-	float px = 0;	// X component of the Vector
-	float py = 0;	// Y component of the Vector
+	float m_x = 0;	// X component of the Vector
+	float m_y = 0;	// Y component of the Vector
 
 public:
 	Vector2D();
@@ -13,27 +13,27 @@ public:
 
 /**
  * Returns the value of X of the Vector2D
- * @return px: the X value of the Vector2D
+ * @return m_x: the X value of the Vector2D
 */
-	inline float GetX() const { return px; }
+	inline float GetX() const { return m_x; }
 
 /**
  * Returns the value of Y of the Vector2D
  * @return The Y value of the Vector2D
 */
-	inline float GetY() const { return py; }
+	inline float GetY() const { return m_y; }
 
 /**
 	* Sets the value of X of the Vector2D
 	* @param x: The new X value of the Vector2D
 */
-	inline void SetX(float x) { px = x; }
+	inline void SetX(float x) { m_x = x; }
 
 /**
 	* Sets the value of Y of the Vector2D
 	* @param y: The new Y value of the Vector2D
 */
-	inline void SetY(float y) { py = y; }
+	inline void SetY(float y) { m_y = y; }
 	void SetXY(float x, float y);
 
 /**

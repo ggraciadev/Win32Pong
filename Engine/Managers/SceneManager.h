@@ -10,9 +10,9 @@ public:
 
 protected:
 
-	Scene*					pCurrentScene = NULL;		// A reference to the current scene
-	int						pCurrentSceneIndex = -1;	// Index of the current scene
-	int						pPreviousSceneIndex = -1;	// Index of the previous scene
+	Scene*					m_currentScene = NULL;		// A reference to the current scene
+	int						m_currentSceneIndex = -1;	// Index of the current scene
+	int						m_previousSceneIndex = -1;	// Index of the previous scene
 
 public:
 /**
@@ -25,7 +25,7 @@ public:
 * Returns a reference to the current scene
 * @return A reference to the current scene
 */
-	inline Scene* GetCurrentScene() const { return pCurrentScene; }
+	inline Scene* GetCurrentScene() const { return m_currentScene; }
 
 protected:
 /**

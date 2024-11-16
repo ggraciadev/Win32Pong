@@ -1,45 +1,45 @@
 #include "Vector2D.h"
 
 Vector2D::Vector2D() {
-	px = py = 0;
+	m_x = m_y = 0;
 }
 Vector2D::Vector2D(float x, float y) {
-	px = x;
-	py = y;
+	m_x = x;
+	m_y = y;
 }
 
 void Vector2D::SetXY(float x, float y) {
-	px = x;
-	py = y;
+	m_x = x;
+	m_y = y;
 }
 
 float Vector2D::GetSize() const {
-	return (float)std::sqrt(px * px + py + py);
+	return (float)std::sqrt(m_x * m_x + m_y + m_y);
 }
 
 Vector2D Vector2D::operator=(const Vector2D other) {
 	if (&other != this) {
-		px = other.px;
-		py = other.py;
+		m_x = other.m_x;
+		m_y = other.m_y;
 	}
 	return *this;
 }
 
 Vector2D Vector2D::operator+(const Vector2D& other) const {
-	return Vector2D(px + other.px, py + other.py);
+	return Vector2D(m_x + other.m_x, m_y + other.m_y);
 }
 
 Vector2D Vector2D::operator-(const Vector2D& other) const {
-	return Vector2D(px + other.px, py + other.py);
+	return Vector2D(m_x + other.m_x, m_y + other.m_y);
 }
 
 Vector2D Vector2D::operator*(float other) const {
-	return Vector2D(px * other, py * other);
+	return Vector2D(m_x * other, m_y * other);
 }
 
 Vector2D Vector2D::operator/(const float other) const {
 	if (other == 0) { return Vector2D(); }
-	else { return Vector2D(px / other, py / other); }
+	else { return Vector2D(m_x / other, m_y / other); }
 }
 
 float Vector2D::Dist(const Vector2D& other) const {

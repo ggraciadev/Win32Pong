@@ -2,27 +2,27 @@
 #include "../Objects/Actor.h"
 
 GameManager::GameManager() {
-	pRunning = true;
+	m_running = true;
 }
 
 GameManager::~GameManager() {
-	pGameInitialized = false;
-	if (pSceneManager != NULL) {
-		delete pSceneManager;
+	m_gameInitialized = false;
+	if (m_sceneManager != NULL) {
+		delete m_sceneManager;
 	}
 }
 
-GameManager* GameManager::pInstance = nullptr;
+GameManager* GameManager::s_instance = nullptr;
 
 void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window) {
-	pRenderTarget = renderTarget;
-	pMainWindow = window;
-	if (pGameInitialized) { return; }
+	m_renderTarget = renderTarget;
+	m_mainWindow = window;
+	if (m_gameInitialized) { return; }
 
 	CreateManagers();
-	if (pSceneManager == NULL) { return; }
+	if (m_sceneManager == NULL) { return; }
 
-	pGameInitialized = true;
+	m_gameInitialized = true;
 	StartGame();
 }
 
@@ -31,7 +31,7 @@ void GameManager::CreateManagers() {
 }
 
 void GameManager::StartGame() {
-	pSceneManager->ChangeScene(0);
+	m_sceneManager->ChangeScene(0);
 }
 
 void GameManager::InitScene() {
@@ -48,24 +48,24 @@ void GameManager::StartScene() {
 }
 
 void GameManager::UpdateScene(float deltaTime) {
-	if (!pGameInitialized) { return; }
+	if (!m_gameInitialized) { return; }
 	if (GetCurrentScene() != NULL) {
 		GetCurrentScene()->Tick(deltaTime);
 	}
 }
 
 void GameManager::RenderScene() {
-	if (!pGameInitialized) { return; }
-	pMainWindow->StartRender();
+	if (!m_gameInitialized) { return; }
+	m_mainWindow->StartRender();
 	if (GetCurrentScene() != NULL) {
 		GetCurrentScene()->Draw();
 	}
-	pMainWindow->EndRender();
+	m_mainWindow->EndRender();
 }
 
 Scene* GameManager::GetCurrentScene() const{
-	if (pSceneManager->GetCurrentScene() != NULL) {
-		return pSceneManager->GetCurrentScene();
+	if (m_sceneManager->GetCurrentScene() != NULL) {
+		return m_sceneManager->GetCurrentScene();
 	}
 	else {
 		return NULL;

@@ -1,8 +1,8 @@
 #include "EllipseActor.h"
 
 EllipseActor::EllipseActor() {
-	pEllipseComponent = new EllipseComponent();
-	AddActorComponent(pEllipseComponent);
+	m_ellipseComponent = AddActorComponent<EllipseComponent>();
+	
 }
 
 EllipseActor::~EllipseActor() {
@@ -12,8 +12,8 @@ EllipseActor::~EllipseActor() {
 
 void EllipseActor::BeginPlay() {
 	Actor::BeginPlay();
-	pEllipseComponent->SetColor(D2D1::ColorF(0.8f, 0.8f, 0.8f));
-	pEllipseComponent->SetEllipseRadius(Vector2D(50, 50));
+	m_ellipseComponent->SetColor(D2D1::ColorF(0.8f, 0.8f, 0.8f));
+	m_ellipseComponent->SetEllipseRadius(Vector2D(50, 50));
 }
 
 void EllipseActor::EndPlay() {

@@ -9,11 +9,11 @@ Actor::Actor() {
 Actor::~Actor() {
 	EndPlay();
 
-	int size = pActorComponents.size();
+	int size = m_actorComponents.size();
 	for (int i = size - 1; i >= 0; --i) {
-		if (pActorComponents[i] != NULL) {
-			delete pActorComponents[i];
-			pActorComponents[i] = NULL;
+		if (m_actorComponents[i] != NULL) {
+			delete m_actorComponents[i];
+			m_actorComponents[i] = NULL;
 		}
 	}
 }
@@ -21,28 +21,24 @@ Actor::~Actor() {
 void Actor::Init() {
 	ID2D1HwndRenderTarget* renderTarget = GameManager::GetInstance<GameManager>()->GetRenderTarget();
 	if (renderTarget != NULL) {
-		pRenderTarget = renderTarget;
-		int size = pActorComponents.size();
+		m_renderTarget = renderTarget;
+		int size = m_actorComponents.size();
 		for (int i = 0; i < size; ++i) {
-			pActorComponents[i]->Init(this);
+			m_actorComponents[i]->Init(this);
 		}
 	}
 }
 
 void Actor::SetTransform(const Transform& transform) {
-	pTransform.SetPosition(transform.GetPosition());
-	pTransform.SetRotation(transform.GetRotation());
-	pTransform.SetScale(transform.GetScale());
-}
-
-void Actor::AddActorComponent(ActorComponent* actorComponent) {
-	pActorComponents.push_back(actorComponent);
+	m_transform.SetPosition(transform.GetPosition());
+	m_transform.SetRotation(transform.GetRotation());
+	m_transform.SetScale(transform.GetScale());
 }
 
 void Actor::BeginPlay() {
-	int size = pActorComponents.size();
+	int size = m_actorComponents.size();
 	for (int i = 0; i < size; ++i) {
-		pActorComponents[i]->BeginPlay();
+		m_actorComponents[i]->BeginPlay();
 	}
 }
 
@@ -51,15 +47,15 @@ void Actor::EndPlay() {
 }
 
 void Actor::Tick(float deltaTime) {
-	int size = pActorComponents.size();
+	int size = m_actorComponents.size();
 	for (int i = 0; i < size; ++i) {
-		pActorComponents[i]->Tick(deltaTime);
+		m_actorComponents[i]->Tick(deltaTime);
 	}
 }
 
 void Actor::Draw() {
-	int size = pActorComponents.size();
+	int size = m_actorComponents.size();
 	for (int i = 0; i < size; ++i) {
-		pActorComponents[i]->SafeDraw();
+		m_actorComponents[i]->SafeDraw();
 	}
 }

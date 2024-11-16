@@ -11,8 +11,8 @@ public:
 
 protected:
 
-    std::vector<Actor*>         pActors;        // Actors in this scene
-    bool sceneStarted = false;                  // If the scene has been started
+    std::vector<Actor*>         m_actors;                   // Actors in this scene
+    bool                        m_sceneStarted = false;     // If the scene has been started
 
 public:
 /**

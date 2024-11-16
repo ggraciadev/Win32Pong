@@ -12,8 +12,8 @@ void SceneManager::ChangeScene(int sceneIndex) {
 	Scene* tempScene = GetNewScene(sceneIndex);
 	if (tempScene == NULL) { return; }
 
-	pPreviousSceneIndex = pCurrentSceneIndex;
-	pCurrentSceneIndex = sceneIndex;
+	m_previousSceneIndex = m_currentSceneIndex;
+	m_currentSceneIndex = sceneIndex;
 
 	FlushCurrentScene();
 	SetCurrentScene(tempScene);
@@ -22,38 +22,38 @@ void SceneManager::ChangeScene(int sceneIndex) {
 }
 
 void SceneManager::FlushCurrentScene() {
-	if (pCurrentScene != NULL) {
-		delete pCurrentScene;
-		pCurrentScene = NULL;
+	if (m_currentScene != NULL) {
+		delete m_currentScene;
+		m_currentScene = NULL;
 	}
 }
 
 void SceneManager::InitScene() {
-	if (pCurrentScene != NULL) {
-		pCurrentScene->Init();
+	if (m_currentScene != NULL) {
+		m_currentScene->Init();
 	}
 }
 
 void SceneManager::StartScene() {
-	if (pCurrentScene != NULL) {
-		pCurrentScene->BeginPlay();
+	if (m_currentScene != NULL) {
+		m_currentScene->BeginPlay();
 	}
 }
 
 void SceneManager::UpdateScene(float deltaTime) {
-	if (pCurrentScene != NULL) {
-		pCurrentScene->Tick(deltaTime);
+	if (m_currentScene != NULL) {
+		m_currentScene->Tick(deltaTime);
 	}
 }
 
 void SceneManager::SetCurrentScene(Scene* scene) {
 	if (scene != NULL) {
-		pCurrentScene = scene;
+		m_currentScene = scene;
 	}
 }
 
 void SceneManager::RenderScene() {
-	if (pCurrentScene != NULL) {
-		pCurrentScene->Draw();
+	if (m_currentScene != NULL) {
+		m_currentScene->Draw();
 	}
 }

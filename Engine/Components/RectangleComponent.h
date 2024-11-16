@@ -9,9 +9,9 @@ public:
 	RectangleComponent();
 
 protected:
-	Vector2D			pRectangleSize;						// The size of the rectangle represented as a Vector2D
-	Vector2D			pCornerRadius;						// The radius of the corners of the rectangle represented as a Vector2D
-	D2D1_ROUNDED_RECT	pRectangle = D2D1_ROUNDED_RECT();	// The D2D1 rectangle that should be rendered
+	Vector2D			m_rectangleSize;						// The size of the rectangle represented as a Vector2D
+	Vector2D			m_cornerRadius;						// The radius of the corners of the rectangle represented as a Vector2D
+	D2D1_ROUNDED_RECT	m_rectangle = D2D1_ROUNDED_RECT();	// The D2D1 rectangle that should be rendered
 
 /**
 This event is called at the begining of the destructor method
@@ -38,13 +38,13 @@ This method is called just before Draw to update every shape positions.
 * This method returns a reference of the rectangle size
 * @return A reference of the rectangle size of the RectangleComponent
 */
-	Vector2D* GetRectangleSize() { return &pRectangleSize; }
+	Vector2D* GetRectangleSize() { return &m_rectangleSize; }
 
 /**
 * This method sets a new value for the rectangle size
 * @param The new size for the rectangle as a Vector2D
 */
-	inline void SetRectangleSize(const Vector2D& size) { pRectangleSize = size; }
+	inline void SetRectangleSize(const Vector2D& size) { m_rectangleSize = size; }
 
 /**
 * This method sets a new value for the rectangle size
@@ -57,13 +57,13 @@ This method is called just before Draw to update every shape positions.
 * This method returns a reference of the rectangle corner radius
 * @return A reference of the rectangle corner radius of the RectangleComponent
 */
-	Vector2D* GetCornerRadius() { return &pCornerRadius; }
+	Vector2D* GetCornerRadius() { return &m_cornerRadius; }
 
 /**
 * This method sets a new value for the rectangle corner radius
 * @param The new rectangle corner radius as a Vector2D
 */
-	inline void SetCornersRadius(const Vector2D& radius) { pCornerRadius = radius; }
+	inline void SetCornersRadius(const Vector2D& radius) { m_cornerRadius = radius; }
 
 /**
 * This method sets a new value for the rectangle corner radius

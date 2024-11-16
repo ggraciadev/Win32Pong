@@ -10,7 +10,7 @@ public:
     virtual ~EllipseActor();
 
 protected:
-    EllipseComponent* pEllipseComponent;    // The ellipse component
+    EllipseComponent* m_ellipseComponent;    // The ellipse component
     
 /**
 This event is called at the begining of the destructor method

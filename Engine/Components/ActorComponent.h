@@ -17,10 +17,10 @@ public:
 
 protected:
 	
-	Actor*			pActor = NULL;			// A reference of the actor that has the component
-	Transform		pTransform;				// The Transform relative to the Actor for this component
-	bool			pIsDrawable = false;	// If the component should be Rendered or not
-	bool			pCanEverTick = false;	// If the component should be Tickable or not
+	Actor*			m_actor = NULL;			// A reference of the actor that has the component
+	Transform		m_transform;				// The Transform relative to the Actor for this component
+	bool			m_isDrawable = false;	// If the component should be Rendered or not
+	bool			m_canEverTick = false;	// If the component should be Tickable or not
 
 /**
 This event is called at the begining of the destructor method
@@ -68,7 +68,7 @@ This event is for the rendering of the component if needed. This method should b
 * This method returns a reference of the transform
 * @return A reference of the transform of the ActorComponent
 */
-	Transform* GetTransform() { return &pTransform; }
+	Transform* GetTransform() { return &m_transform; }
 
 /**
  * Sets the position of the transform of this ActorComponent

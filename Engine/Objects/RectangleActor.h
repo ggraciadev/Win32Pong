@@ -10,7 +10,7 @@ public:
     virtual ~RectangleActor();
 
 protected:
-    RectangleComponent* pRectangleComponent;    // The rectangle component
+    RectangleComponent* m_rectangleComponent;    // The rectangle component
     
 /**
 This event is called at the begining of the destructor method

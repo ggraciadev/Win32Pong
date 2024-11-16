@@ -2,5 +2,5 @@
 #include "MySceneManager.h"
 
 void MyGameManager::CreateCustomSceneManager() {
-	pSceneManager = new MySceneManager();
+	m_sceneManager = new MySceneManager();
 }

@@ -7,18 +7,18 @@
 
 class GameManager {
 private: 
-	static GameManager*		pInstance;					// Current instance of the Singleton
+	static GameManager*		s_instance;					// Current instance of the Singleton
 
-	ID2D1HwndRenderTarget*	pRenderTarget = NULL;		// Render target that will be used to render the game		
-	MainWindow*				pMainWindow = NULL;			// A reference to the Main Window 
+	ID2D1HwndRenderTarget*	m_renderTarget = NULL;		// Render target that will be used to render the game		
+	MainWindow*				m_mainWindow = NULL;			// A reference to the Main Window 
 
-	bool					pRunning = false;			// If the game is still running or not
-	bool					pGameInitialized = false;	// If the scene is initialized
+	bool					m_running = false;			// If the game is still running or not
+	bool					m_gameInitialized = false;	// If the scene is initialized
 
 protected:
 	GameManager();
 
-	SceneManager*			pSceneManager = NULL;		// A reference to the SceneManager
+	SceneManager*			m_sceneManager = NULL;		// A reference to the SceneManager
 
 public:
 	~GameManager();
@@ -60,18 +60,18 @@ Creates the instance of the Custom Scene Manager. Should be overrided in order t
 * Returns the render target
 * @return The render target
 */
-	ID2D1HwndRenderTarget* GetRenderTarget() const { return pRenderTarget; }
+	ID2D1HwndRenderTarget* GetRenderTarget() const { return m_renderTarget; }
 /**
 * Returns if the Game is still running or not
 * @return Returns if the Game is still running or not
 */
-	bool IsGameRunning() const { return pRunning; }
+	bool IsGameRunning() const { return m_running; }
 
 /**
 * Set if the Game is running or not
 * @param running: The new running value
 */
-	void SetGameRunning(bool running) { pRunning = false; }
+	void SetGameRunning(bool running) { m_running = false; }
 
 /**
 This method is called to create and initialize the current scene
@@ -99,10 +99,10 @@ This method is called to render the current Scene
 
 template<class T>
 T* GameManager::GetInstance() {
-	if (pInstance == nullptr) {
-		pInstance = new T();
+	if (s_instance == nullptr) {
+		s_instance = new T();
 	}
-	return (T*)(pInstance);
+	return (T*)(s_instance);
 }
 
 template< class T>

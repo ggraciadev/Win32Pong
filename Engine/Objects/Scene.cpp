@@ -1,14 +1,16 @@
 #include "Scene.h"
+#include <d2d1.h>
+#include <Windows.h>
 
 Scene::Scene() {
 
 }
 
 Scene::~Scene() {
-	int size = pActors.size();
+	int size = m_actors.size();
 	for (int i = size - 1; i >= 0; --i) {
-		if (pActors[i] != NULL) {
-			delete pActors[i];
+		if (m_actors[i] != NULL) {
+			delete m_actors[i];
 		}
 	}
 }
@@ -17,22 +19,22 @@ Scene::~Scene() {
 This event is called to initialize a Scene
 */
 void Scene::Init() {
-	int size = pActors.size();
+	int size = m_actors.size();
 	for (int i = 0; i < size; ++i) {
-		if (pActors[i] != NULL) {
-			pActors[i]->Init();
+		if (m_actors[i] != NULL) {
+			m_actors[i]->Init();
 		}
 	}
 }
 
 void Scene::BeginPlay() {
-	int size = pActors.size();
+	int size = m_actors.size();
 	for (int i = 0; i < size; ++i) {
-		if (pActors[i] != NULL) {
-			pActors[i]->BeginPlay();
+		if (m_actors[i] != NULL) {
+			m_actors[i]->BeginPlay();
 		}
 	}
-	sceneStarted = true;
+	m_sceneStarted = true;
 }
 
 
@@ -40,10 +42,10 @@ void Scene::BeginPlay() {
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
 */
 void Scene::Tick(float deltaTime) {
-	int size = pActors.size();
+	int size = m_actors.size();
 	for (int i = size-1; i >= 0; --i) {
-		if (pActors[i] != NULL) {
-			pActors[i]->Tick(deltaTime);
+		if (m_actors[i] != NULL) {
+			m_actors[i]->Tick(deltaTime);
 		}
 	}
 }
@@ -52,21 +54,21 @@ void Scene::Tick(float deltaTime) {
 This event is for the rendering of the Actor. This method automaticaly calls the SafeDraw of all its ActorComponents
 */
 void Scene::Draw() {
-	int size = pActors.size();
+	int size = m_actors.size();
 	for (int i = 0; i < size; ++i) {
-		if (pActors[i] != NULL) {
-			pActors[i]->Draw();
+		if (m_actors[i] != NULL) {
+			m_actors[i]->Draw();
 		}
 	}
 }
 
 int Scene::GetActorIndexInScene(const Actor* actor) const {
-	int size = pActors.size();
+	int size = m_actors.size();
 	int index = -1;
 	int i = -1;
 
 	while (++i < size && index == -1) {
-		if (actor == pActors[i]) {
+		if (actor == m_actors[i]) {
 			index = i;
 		}
 	}
@@ -80,8 +82,8 @@ bool Scene::IsActorInScene(const Actor* actor) const {
 bool Scene::AddActorToScene(Actor* actor) {
 	bool result = false;
 	if (actor != NULL && !IsActorInScene(actor)) {
-		pActors.push_back(actor);
-		if (sceneStarted) {
+		m_actors.push_back(actor);
+		if (m_sceneStarted) {
 			actor->Init();
 			actor->BeginPlay();
 		}
@@ -93,7 +95,7 @@ bool Scene::AddActorToScene(Actor* actor) {
 bool Scene::RemoveActorFromScene(Actor* actor) {
 	int index = GetActorIndexInScene(actor);
 	if (index != -1) {
-		pActors.erase(pActors.begin() + index);
+		m_actors.erase(m_actors.begin() + index);
 		return true;
 	}
 	return false;
@@ -103,6 +105,6 @@ void Scene::DestroyActor(Actor* actor) {
 	int index = GetActorIndexInScene(actor);
 	delete actor;
 	if (index != -1) {
-		pActors.erase(pActors.begin() + index);
+		m_actors.erase(m_actors.begin() + index);
 	}
 }

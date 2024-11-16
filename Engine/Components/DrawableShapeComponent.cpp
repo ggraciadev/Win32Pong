@@ -4,13 +4,13 @@
 #include "../Utils/Utils.h"
 
 DrawableShapeComponent::DrawableShapeComponent() {
-	pIsDrawable = true;
+	m_isDrawable = true;
 }
 
 DrawableShapeComponent::~DrawableShapeComponent() {
-	if (pBrush != NULL) {
-		pBrush->Release();
-		pBrush = NULL;
+	if (m_brush != NULL) {
+		m_brush->Release();
+		m_brush = NULL;
 	}
 }
 
@@ -20,16 +20,16 @@ void DrawableShapeComponent::Init(Actor* actor) {
 
 void DrawableShapeComponent::Init(Actor* actor, D2D1_COLOR_F color) {
 	ActorComponent::Init(actor);
-	pColor = color;
-	ID2D1HwndRenderTarget* renderTarget = pActor->GetRenderTarget();
+	m_color = color;
+	ID2D1HwndRenderTarget* renderTarget = m_actor->GetRenderTarget();
 	if (renderTarget != NULL) {
-		renderTarget->CreateSolidColorBrush(pColor, &pBrush);
+		renderTarget->CreateSolidColorBrush(m_color, &m_brush);
 	}
 }
 
 void DrawableShapeComponent::SetColor(D2D1_COLOR_F color) {
-	pColor = color;
-	pBrush->SetColor(pColor);
+	m_color = color;
+	m_brush->SetColor(m_color);
 }
 
 void DrawableShapeComponent::BeginPlay() {
@@ -41,5 +41,5 @@ void DrawableShapeComponent::Draw(ID2D1HwndRenderTarget* renderTarget) {
 }
 
 void DrawableShapeComponent::EndPlay() {
-	SafeRelease(&pBrush);
+	SafeRelease(&m_brush);
 }

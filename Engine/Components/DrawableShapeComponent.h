@@ -10,8 +10,8 @@ public:
 
 
 protected:
-	D2D1_COLOR_F			pColor = D2D1::ColorF(0.8f, 0.8f, 0.8f);	// Color of the DrawableShape
-	ID2D1SolidColorBrush*	pBrush = NULL;								// Solid Color Brush of the DrawableShape
+	D2D1_COLOR_F			m_color = D2D1::ColorF(0.8f, 0.8f, 0.8f);	// Color of the DrawableShape
+	ID2D1SolidColorBrush*	m_brush = NULL;								// Solid Color Brush of the DrawableShape
 
 public:
 /**
@@ -35,7 +35,7 @@ public:
  */
 	virtual void Init(Actor* actor, D2D1_COLOR_F color);
 
-	D2D1_COLOR_F GetColor() const { return pColor; }
+	D2D1_COLOR_F GetColor() const { return m_color; }
 	void SetColor(D2D1_COLOR_F color);
 
 /**

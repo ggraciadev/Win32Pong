@@ -11,9 +11,9 @@ MyRectangleActor::~MyRectangleActor() {
 
 void MyRectangleActor::BeginPlay() {
 	RectangleActor::BeginPlay();
-	pRectangleComponent->SetColor(D2D1::ColorF(1.0f, 1.0f, 0));
-	pRectangleComponent->SetRectangleSize(Vector2D(50, 50));
-	pRectangleComponent->SetCornersRadius(Vector2D(5, 5));
+	m_rectangleComponent->SetColor(D2D1::ColorF(1.0f, 1.0f, 0));
+	m_rectangleComponent->SetRectangleSize(Vector2D(50, 50));
+	m_rectangleComponent->SetCornersRadius(Vector2D(5, 5));
 }
 
 void MyRectangleActor::EndPlay() {
@@ -22,5 +22,5 @@ void MyRectangleActor::EndPlay() {
 
 void MyRectangleActor::Tick(float deltaTime) {
 	RectangleActor::Tick(deltaTime);
-	pTransform.SetPosition(pTransform.GetPosition() + Vector2D(0, 1));
+	m_transform.SetPosition(m_transform.GetPosition() + Vector2D(0, 1));
 }

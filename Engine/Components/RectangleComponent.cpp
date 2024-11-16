@@ -7,25 +7,25 @@ RectangleComponent::RectangleComponent() {
 
 void RectangleComponent::UpdateShape() {
 	Vector2D sizeMulti = Vector2D(
-		pActor->GetTransform()->GetScale().GetX() * pTransform.GetScale().GetX(),
-		pActor->GetTransform()->GetScale().GetY() * pTransform.GetScale().GetY());
+		m_actor->GetTransform()->GetScale().GetX() * m_transform.GetScale().GetX(),
+		m_actor->GetTransform()->GetScale().GetY() * m_transform.GetScale().GetY());
 
-	pRectangle.rect = D2D1::RectF(
-		pActor->GetTransform()->GetPosition().GetX() + pTransform.GetPosition().GetX() - (pRectangleSize.GetX() * sizeMulti.GetX()) / 2.0f,
-		pActor->GetTransform()->GetPosition().GetY() + pTransform.GetPosition().GetY() - (pRectangleSize.GetY() * sizeMulti.GetY()) / 2.0f,
-		pActor->GetTransform()->GetPosition().GetX() + pTransform.GetPosition().GetX() + (pRectangleSize.GetX() * sizeMulti.GetX()) / 2.0f,
-		pActor->GetTransform()->GetPosition().GetY() + pTransform.GetPosition().GetY() + (pRectangleSize.GetY() * sizeMulti.GetY()) / 2.0f
+	m_rectangle.rect = D2D1::RectF(
+		m_actor->GetTransform()->GetPosition().GetX() + m_transform.GetPosition().GetX() - (m_rectangleSize.GetX() * sizeMulti.GetX()) / 2.0f,
+		m_actor->GetTransform()->GetPosition().GetY() + m_transform.GetPosition().GetY() - (m_rectangleSize.GetY() * sizeMulti.GetY()) / 2.0f,
+		m_actor->GetTransform()->GetPosition().GetX() + m_transform.GetPosition().GetX() + (m_rectangleSize.GetX() * sizeMulti.GetX()) / 2.0f,
+		m_actor->GetTransform()->GetPosition().GetY() + m_transform.GetPosition().GetY() + (m_rectangleSize.GetY() * sizeMulti.GetY()) / 2.0f
 	);
 
-	pRectangle.radiusX = pCornerRadius.GetX() * sizeMulti.GetX();
-	pRectangle.radiusY = pCornerRadius.GetY() * sizeMulti.GetY();
+	m_rectangle.radiusX = m_cornerRadius.GetX() * sizeMulti.GetX();
+	m_rectangle.radiusY = m_cornerRadius.GetY() * sizeMulti.GetY();
 }
 
 void RectangleComponent::Draw() {
-	ID2D1HwndRenderTarget* renderTarget = pActor->GetRenderTarget();
+	ID2D1HwndRenderTarget* renderTarget = m_actor->GetRenderTarget();
 	if (renderTarget != NULL) {
 		DrawableShapeComponent::Draw(renderTarget);
-		renderTarget->FillRoundedRectangle(pRectangle, pBrush);
+		renderTarget->FillRoundedRectangle(m_rectangle, m_brush);
 	}
 }
 
