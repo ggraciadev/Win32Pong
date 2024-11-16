@@ -13,7 +13,7 @@ class MainWindow : public BaseWindow<MainWindow>
     ID2D1HwndRenderTarget* pRenderTarget;
     PAINTSTRUCT pPaintStructure;
     //EllipseActor* pEllipseActor;
-    GameManager* pGameManager;
+    GameManager* pGameManager = NULL;
     
     /*ID2D1SolidColorBrush* pBrush;
     D2D1_ELLIPSE            ellipse = D2D1_ELLIPSE();*/

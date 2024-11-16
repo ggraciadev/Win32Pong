@@ -32,6 +32,7 @@ void Scene::BeginPlay() {
 			pActors[i]->BeginPlay();
 		}
 	}
+	sceneStarted = true;
 }
 
 
@@ -40,7 +41,7 @@ This event is for the logic of the component, the behaviour that has to be updat
 */
 void Scene::Tick(float deltaTime) {
 	int size = pActors.size();
-	for (int i = 0; i < size; ++i) {
+	for (int i = size-1; i >= 0; --i) {
 		if (pActors[i] != NULL) {
 			pActors[i]->Tick(deltaTime);
 		}
@@ -80,6 +81,10 @@ bool Scene::AddActorToScene(Actor* actor) {
 	bool result = false;
 	if (actor != NULL && !IsActorInScene(actor)) {
 		pActors.push_back(actor);
+		if (sceneStarted) {
+			actor->Init();
+			actor->BeginPlay();
+		}
 		result = true;
 	}
 	return result;

@@ -33,8 +33,6 @@ HRESULT MainWindow::CreateGraphicsResources()
         {
             pGameManager = GameManager::GetInstance<GameManager>();
             pGameManager->InitGameManager(pRenderTarget, this);
-            pGameManager->InitScene();
-            pGameManager->StartScene();
             if (SUCCEEDED(hr))
             {
                 CalculateLayout();

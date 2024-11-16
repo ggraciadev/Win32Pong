@@ -12,6 +12,7 @@ public:
 protected:
 
     std::vector<Actor*>         pActors;        // Actors in this scene
+    bool sceneStarted = false;                  // If the scene has been started
 
 public:
 /**
@@ -20,9 +21,9 @@ This event is called when the game starts
     void BeginPlay();
 
 /**
-This event is called to initialize a Scene
+This event is called to initialize a Scene. Override this method to add all the Actors to the scene and then call Scene::Init()
 */
-    void Init();
+    virtual void Init();
 
 /**
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
@@ -47,7 +48,7 @@ This event is for the rendering of the Actor. This method automaticaly calls the
 * @param actor: The actor to chock in the list
 * @return Returns the index of the actor in the actors list or -1 if not found
 */
-int GetActorIndexInScene(const Actor* actor) const;
+    int GetActorIndexInScene(const Actor* actor) const;
 
 /**
 * This method returns if an actor is in scene

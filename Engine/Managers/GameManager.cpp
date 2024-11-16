@@ -1,11 +1,15 @@
 #include "GameManager.h"
+#include "../Objects/Actor.h"
 
 GameManager::GameManager() {
 	pRunning = true;
 }
 
 GameManager::~GameManager() {
-	pSceneInitialized = false;
+	pGameInitialized = false;
+	if (pSceneManager != NULL) {
+		delete pSceneManager;
+	}
 }
 
 GameManager* GameManager::pInstance = nullptr;
@@ -13,41 +17,63 @@ GameManager* GameManager::pInstance = nullptr;
 void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window) {
 	pRenderTarget = renderTarget;
 	pMainWindow = window;
+	if (pGameInitialized) { return; }
+
+	CreateManagers();
+	if (pSceneManager == NULL) { return; }
+
+	pGameInitialized = true;
+	StartGame();
+}
+
+void GameManager::CreateManagers() {
+	CreateCustomSceneManager();
+}
+
+void GameManager::StartGame() {
+	pSceneManager->ChangeScene(0);
 }
 
 void GameManager::InitScene() {
-	if (pCurrentScene != NULL) {
-		pCurrentScene->Init();
-		pSceneInitialized = true;
+	if (GetCurrentScene() != NULL) {
+		GetCurrentScene();
 	}
 }
 
 void GameManager::StartScene() {
-	if (pCurrentScene != NULL) {
-		pCurrentScene->BeginPlay();
+	if (GetCurrentScene() != NULL) {
+		GetCurrentScene()->BeginPlay();
 	}
 
 }
 
 void GameManager::UpdateScene(float deltaTime) {
-	if (!pSceneInitialized) { return; }
-	if (pCurrentScene != NULL) {
-		pCurrentScene->Tick(deltaTime);
+	if (!pGameInitialized) { return; }
+	if (GetCurrentScene() != NULL) {
+		GetCurrentScene()->Tick(deltaTime);
 	}
 }
 
 void GameManager::RenderScene() {
-	if (!pSceneInitialized) { return; }
+	if (!pGameInitialized) { return; }
 	pMainWindow->StartRender();
-	if (pCurrentScene != NULL) {
-		pCurrentScene->Draw();
+	if (GetCurrentScene() != NULL) {
+		GetCurrentScene()->Draw();
 	}
 	pMainWindow->EndRender();
 }
-void GameManager::SetCurrentScene(Scene* scene) {
-	if (pCurrentScene != NULL) {
-		delete pCurrentScene;
-		pCurrentScene = NULL;
+
+Scene* GameManager::GetCurrentScene() const{
+	if (pSceneManager->GetCurrentScene() != NULL) {
+		return pSceneManager->GetCurrentScene();
 	}
-	pCurrentScene = scene;
+	else {
+		return NULL;
+	}
+
+
+}
+
+void GameManager::DespawnActor(Actor* actor) {
+	GetCurrentScene()->DestroyActor(actor);
 }

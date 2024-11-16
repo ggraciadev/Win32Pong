@@ -16,8 +16,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
 
     ShowWindow(win.Window(), nCmdShow);
 
-    // Run the message loop.
-
     MSG msg = { };
 
     MyGameManager* gameManager = (MyGameManager*)GameManager::GetInstance<MyGameManager>();

@@ -120,6 +120,18 @@
     <ClInclude Include="..\Game\Managers\MyGameManager.h">
       <Filter>Game\Managers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Game\Managers\MySceneManager.h">
+      <Filter>Game\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\RectangleComponent.h">
+      <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\RectangleActor.h">
+      <Filter>Engine\Archivos de encabezado\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Actors\MyRectangleActor.h">
+      <Filter>Game\Actors</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -166,6 +178,21 @@
     </ClCompile>
     <ClCompile Include="..\Game\Managers\MyGameManager.cpp">
       <Filter>Game\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\SceneManager.cpp">
+      <Filter>Engine\Archivos de origen\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Managers\MySceneManager.cpp">
+      <Filter>Game\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\RectangleActor.cpp">
+      <Filter>Engine\Archivos de origen\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\RectangleComponent.cpp">
+      <Filter>Engine\Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Actors\MyRectangleActor.cpp">
+      <Filter>Game\Actors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

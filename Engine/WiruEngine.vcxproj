@@ -128,16 +128,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Game\Actors\MyEllipseActor.h" />
+    <ClInclude Include="..\Game\Actors\MyRectangleActor.h" />
     <ClInclude Include="..\Game\Managers\MyGameManager.h" />
+    <ClInclude Include="..\Game\Managers\MySceneManager.h" />
     <ClInclude Include="..\Game\Scenes\TestScene.h" />
     <ClInclude Include="Components\ActorComponent.h" />
     <ClInclude Include="Components\DrawableShapeComponent.h" />
     <ClInclude Include="Components\EllipseComponent.h" />
+    <ClInclude Include="Components\RectangleComponent.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Managers\GameManager.h" />
     <ClInclude Include="Managers\SceneManager.h" />
     <ClInclude Include="Objects\Actor.h" />
     <ClInclude Include="Objects\EllipseActor.h" />
+    <ClInclude Include="Objects\RectangleActor.h" />
     <ClInclude Include="Objects\Scene.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -150,15 +154,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Game\Actors\MyEllipseActor.cpp" />
+    <ClCompile Include="..\Game\Actors\MyRectangleActor.cpp" />
     <ClCompile Include="..\Game\Managers\MyGameManager.cpp" />
+    <ClCompile Include="..\Game\Managers\MySceneManager.cpp" />
     <ClCompile Include="..\Game\Scenes\TestScene.cpp" />
     <ClCompile Include="Components\ActorComponent.cpp" />
     <ClCompile Include="Components\DrawableShapeComponent.cpp" />
     <ClCompile Include="Components\EllipseComponent.cpp" />
+    <ClCompile Include="Components\RectangleComponent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\GameManager.cpp" />
+    <ClCompile Include="Managers\SceneManager.cpp" />
     <ClCompile Include="Objects\Actor.cpp" />
     <ClCompile Include="Objects\EllipseActor.cpp" />
+    <ClCompile Include="Objects\RectangleActor.cpp" />
     <ClCompile Include="Objects\Scene.cpp" />
     <ClCompile Include="Utils\Transform.cpp" />
     <ClCompile Include="Utils\Utils.cpp" />

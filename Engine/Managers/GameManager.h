@@ -1,7 +1,7 @@
 #pragma once
 #include "../Objects/EllipseActor.h"
 #include "../Windows/MainWindow.h"
-#include "../Objects/Scene.h"
+#include "SceneManager.h"
 
 // The GameManager is the class responsible of managin all the game. Is a Singleton to ensure that only exists one copy of it
 
@@ -9,16 +9,16 @@ class GameManager {
 private: 
 	static GameManager*		pInstance;					// Current instance of the Singleton
 
-	ID2D1HwndRenderTarget*	pRenderTarget;				// Render target that will be used to render the game		
-	MainWindow*				pMainWindow;				// A reference to the Main Window 
-
-	Scene*					pCurrentScene;				// A reference to the current scene
+	ID2D1HwndRenderTarget*	pRenderTarget = NULL;		// Render target that will be used to render the game		
+	MainWindow*				pMainWindow = NULL;			// A reference to the Main Window 
 
 	bool					pRunning = false;			// If the game is still running or not
-	bool					pSceneInitialized = false;	// If the scene is initialized
+	bool					pGameInitialized = false;	// If the scene is initialized
 
 protected:
 	GameManager();
+
+	SceneManager*			pSceneManager = NULL;		// A reference to the SceneManager
 
 public:
 	~GameManager();
@@ -30,9 +30,31 @@ public:
 	template< class T> 
 	static T* GetInstance();
 
+/**
+* Creates an instance of an actor of the type specified and adds it to the current scene actor list
+* @return The actor spawned
+*/
+	template< class T>
+	T* SpawnActor();
+
+/**
+* Destroys an instance of an actor if is not NULL and removes it from the current scene actor list
+* @param actor: the actor to despawn
+*/
+	void DespawnActor(Actor* actor);
+
 
 	void InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindow* window);
+	void StartGame();
 
+	void CreateManagers();
+
+/**
+Creates the instance of the Custom Scene Manager. Should be overrided in order to create a User Custom Scene Manager
+*/
+	virtual void CreateCustomSceneManager() {};
+
+	Scene* GetCurrentScene() const;
 
 /**
 * Returns the render target
@@ -54,7 +76,7 @@ public:
 /**
 This method is called to create and initialize the current scene
 */
-	virtual void InitScene();
+	void InitScene();
 
 /**
 This method is called when the current Scene starts
@@ -68,16 +90,11 @@ This method is called when the current Scene starts
 	void UpdateScene(float deltaTime);
 
 /**
-* This methos is called to set the current scene
-* @param scene: The new current scene
-*/
-	void SetCurrentScene(Scene* scene);
-
-/**
 This method is called to render the current Scene
 */
 	void RenderScene();
 };
+
 
 
 template<class T>
@@ -86,4 +103,15 @@ T* GameManager::GetInstance() {
 		pInstance = new T();
 	}
 	return (T*)(pInstance);
+}
+
+template< class T>
+T* GameManager::SpawnActor() {
+	T* actor = new T();
+	bool result = GetCurrentScene()->AddActorToScene(actor);
+	if (!result) {
+		delete actor;
+		return NULL;
+	}
+	return actor;
 }
