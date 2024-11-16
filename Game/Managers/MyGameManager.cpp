@@ -3,4 +3,5 @@
 
 void MyGameManager::CreateCustomSceneManager() {
 	m_sceneManager = new MySceneManager();
+	m_inputManager = new InputManager();
 }
