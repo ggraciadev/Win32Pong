@@ -21,6 +21,7 @@ protected:
 	Transform		m_transform;				// The Transform relative to the Actor for this component
 	bool			m_isDrawable = false;	// If the component should be Rendered or not
 	bool			m_canEverTick = false;	// If the component should be Tickable or not
+	bool			m_PhysicsEnabled = false;	// If the components' physics should be updated or not
 
 /**
 This event is called at the begining of the destructor method
@@ -39,15 +40,21 @@ public:
  */
 	virtual void Init(Actor* actor);
 
-/**
-This method checks if the component should be rendered and calls the Draw method to be renedered.
- */
-	virtual void SafeDraw();
 
 /**
 This event is called when the game starts or when the owner Actor is spawned
 */
 	virtual void BeginPlay() {};
+
+/**
+This method checks if the physics of the component should be updated and calls the PhysicsTick method to be updated.
+*/
+	virtual void SafePhysicsTick();
+
+/**
+This event is for the physics collision calculations. This method should be overrided by every ActorComponent that uses it
+*/
+	virtual void PhysicsTick() {};
 
 /**
 This method checks if the component should be updated and calls the Tick method to be updated.
@@ -58,6 +65,11 @@ This method checks if the component should be updated and calls the Tick method 
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
 */
 	virtual void Tick(float deltaTime) {};
+
+/**
+This method checks if the component should be rendered and calls the Draw method to be renedered.
+ */
+	virtual void SafeDraw();
 
 /**
 This event is for the rendering of the component if needed. This method should be overrided by every ActorComponent that uses it

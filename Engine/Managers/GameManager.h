@@ -3,6 +3,7 @@
 #include "../Windows/MainWindow.h"
 #include "SceneManager.h"
 #include "InputManager.h"
+#include "PhysicsManager.h"
 
 // The GameManager is the class responsible of managin all the game. Is a Singleton to ensure that only exists one copy of it
 
@@ -21,6 +22,7 @@ protected:
 
 	SceneManager*			m_sceneManager = NULL;		// A reference to the SceneManager
 	InputManager*			m_inputManager = NULL;		// A reference to the InputManager
+	PhysicsManager*			m_physicsManager = NULL;	// A reference to the InputManager
 
 public:
 	~GameManager();
@@ -59,11 +61,17 @@ Creates the instance of the Custom Scene Manager. Should be overrided in order t
 /**
 Creates the instance of the Custom Input Manager. Should be overrided in order to create a User Custom Input Manager
 */
-	virtual void CreateCustomInputManager() {};
+	virtual void CreateCustomInputManager();
+
+/**
+Creates the instance of the Custom Scene Manager. Should be overrided in order to create a User Custom Scene Manager
+*/
+virtual void CreateCustomPhysicsManager();
 
 	Scene* GetCurrentScene() const;
 	SceneManager* GetSceneManager() { return m_sceneManager; }
 	InputManager* GetInputManager() { return m_inputManager; }
+	PhysicsManager* GetPhysicsManager() { return m_physicsManager; }
 
 /**
 * Returns the render target

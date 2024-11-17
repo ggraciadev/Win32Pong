@@ -26,12 +26,17 @@ This event is called to initialize a Scene. Override this method to add all the 
     virtual void Init();
 
 /**
-This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
+This event is for the physics calculations of all the Actors in scene. This method automaticaly calls the SafeDraw of all its ActorComponents
+*/
+    void PhysicsTick();
+
+/**
+This event is for the logic of all the Actors in scene, the behaviour that has to be updated frame by frame if needed.
 */
     void Tick(float deltaTime);
 
 /**
-This event is for the rendering of the Actor. This method automaticaly calls the SafeDraw of all its ActorComponents
+This event is for the rendering of all the Actors in scene. This method automaticaly calls the SafeDraw of all its ActorComponents
 */
     void Draw();
 

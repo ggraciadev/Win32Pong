@@ -29,6 +29,15 @@ void GameManager::InitGameManager(ID2D1HwndRenderTarget* renderTarget, MainWindo
 void GameManager::CreateManagers() {
 	CreateCustomSceneManager();
 	CreateCustomInputManager();
+	CreateCustomPhysicsManager();
+}
+
+void GameManager::CreateCustomInputManager() {
+	m_inputManager = new InputManager();
+}
+
+void GameManager::CreateCustomPhysicsManager() {
+	m_physicsManager = new PhysicsManager();
 }
 
 void GameManager::StartGame() {
@@ -52,7 +61,9 @@ void GameManager::UpdateScene(float deltaTime) {
 	if (!m_gameInitialized) { return; }
 	if (GetCurrentScene() != NULL) {
 		m_inputManager->UpdateInputState();
-		GetCurrentScene()->Tick(deltaTime);
+		Scene* currentScene = GetCurrentScene();
+		currentScene->PhysicsTick();
+		currentScene->Tick(deltaTime);
 	}
 }
 

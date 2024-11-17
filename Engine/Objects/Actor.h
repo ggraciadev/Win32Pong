@@ -4,6 +4,7 @@
 #include <d2d1.h>
 
 class ActorComponent;
+class CollisionComponent;
 
 class Actor
 {
@@ -39,6 +40,12 @@ This event is called when the game starts or when the owner Actor is spawned
 This event is called when the game starts or when the owner Actor is spawned
 */
     virtual void Init();
+
+
+/**
+This event is for the physics calculaton of the Actor. This method automaticaly calls the SafePhysicsTick of all its ActorComponents
+*/
+    void PhysicsTick();
     
 /**
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
@@ -64,7 +71,15 @@ This event is for the rendering of the Actor. This method automaticaly calls the
 * @return A reference of the render target of the Actor
 */
     ID2D1HwndRenderTarget* GetRenderTarget() { return m_renderTarget; }
+
+
+    virtual void OnActorBeginOverlap(Actor* other, CollisionComponent* otherComponent) {}
+
+    virtual void OnActorEndOverlap(Actor* other, CollisionComponent* otherComponent) {}
+
+    virtual void OnActorHit(Actor* other, CollisionComponent* otherComponent) {}
 };
+
 
 
 template< class T>

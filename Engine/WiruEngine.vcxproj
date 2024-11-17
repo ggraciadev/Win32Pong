@@ -136,6 +136,8 @@
     <ClInclude Include="..\Game\Managers\MySceneManager.h" />
     <ClInclude Include="..\Game\Scenes\TestScene.h" />
     <ClInclude Include="Components\ActorComponent.h" />
+    <ClInclude Include="Components\BoxCollisionComponent.h" />
+    <ClInclude Include="Components\CollisionComponent.h" />
     <ClInclude Include="Components\DrawableShapeComponent.h" />
     <ClInclude Include="Components\EllipseComponent.h" />
     <ClInclude Include="Components\RectangleComponent.h" />
@@ -143,6 +145,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="Managers\GameManager.h" />
     <ClInclude Include="Managers\InputManager.h" />
+    <ClInclude Include="Managers\PhysicsManager.h" />
     <ClInclude Include="Managers\SceneManager.h" />
     <ClInclude Include="Objects\Actor.h" />
     <ClInclude Include="Objects\AIController.h" />
@@ -173,12 +176,15 @@
     <ClCompile Include="..\Game\Scenes\TestScene.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="Components\ActorComponent.cpp" />
+    <ClCompile Include="Components\BoxCollisionComponent.cpp" />
+    <ClCompile Include="Components\CollisionComponent.cpp" />
     <ClCompile Include="Components\DrawableShapeComponent.cpp" />
     <ClCompile Include="Components\EllipseComponent.cpp" />
     <ClCompile Include="Components\RectangleComponent.cpp" />
     <ClCompile Include="Components\TextBoxComponent.cpp" />
     <ClCompile Include="Managers\GameManager.cpp" />
     <ClCompile Include="Managers\InputManager.cpp" />
+    <ClCompile Include="Managers\PhysicsManager.cpp" />
     <ClCompile Include="Managers\SceneManager.cpp" />
     <ClCompile Include="Objects\Actor.cpp" />
     <ClCompile Include="Objects\AIController.cpp" />

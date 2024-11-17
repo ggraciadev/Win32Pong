@@ -43,10 +43,15 @@ void Scene::BeginPlay() {
 	m_sceneStarted = true;
 }
 
+void Scene::PhysicsTick() {
+	int size = m_actors.size();
+	for (int i = 0; i < size; ++i) {
+		if (m_actors[i] != NULL) {
+			m_actors[i]->PhysicsTick();
+		}
+	}
+}
 
-/**
-This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
-*/
 void Scene::Tick(float deltaTime) {
 	int size = m_actors.size();
 	for (int i = size-1; i >= 0; --i) {
@@ -56,9 +61,6 @@ void Scene::Tick(float deltaTime) {
 	}
 }
 
-/**
-This event is for the rendering of the Actor. This method automaticaly calls the SafeDraw of all its ActorComponents
-*/
 void Scene::Draw() {
 	int size = m_actors.size();
 	for (int i = 0; i < size; ++i) {

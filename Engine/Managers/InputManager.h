@@ -1,6 +1,6 @@
 #pragma once
-#include "../Objects/Scene.h"
 #include <map>
+#include <Windows.h>
 
 typedef struct KeyState {
 	bool currentState = false;
