@@ -30,7 +30,7 @@ Vector2D Vector2D::operator+(const Vector2D& other) const {
 }
 
 Vector2D Vector2D::operator-(const Vector2D& other) const {
-	return Vector2D(m_x + other.m_x, m_y + other.m_y);
+	return Vector2D(m_x - other.m_x, m_y - other.m_y);
 }
 
 Vector2D Vector2D::operator*(float other) const {

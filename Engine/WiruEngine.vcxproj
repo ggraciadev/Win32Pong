@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Game\Actors\MyEllipseActor.h" />
+    <ClInclude Include="..\Game\Actors\Ball.h" />
     <ClInclude Include="..\Game\Actors\MyPlayerController.h" />
     <ClInclude Include="..\Game\Actors\MyRectangleActor.h" />
     <ClInclude Include="..\Game\Actors\Paddle.h" />
@@ -140,6 +140,7 @@
     <ClInclude Include="Components\CollisionComponent.h" />
     <ClInclude Include="Components\DrawableShapeComponent.h" />
     <ClInclude Include="Components\EllipseComponent.h" />
+    <ClInclude Include="Components\MovementComponent.h" />
     <ClInclude Include="Components\RectangleComponent.h" />
     <ClInclude Include="Components\TextBoxComponent.h" />
     <ClInclude Include="framework.h" />
@@ -166,7 +167,7 @@
     <ClInclude Include="Windows\MainWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Game\Actors\MyEllipseActor.cpp" />
+    <ClCompile Include="..\Game\Actors\Ball.cpp" />
     <ClCompile Include="..\Game\Actors\MyPlayerController.cpp" />
     <ClCompile Include="..\Game\Actors\MyRectangleActor.cpp" />
     <ClCompile Include="..\Game\Actors\Paddle.cpp" />
@@ -180,6 +181,7 @@
     <ClCompile Include="Components\CollisionComponent.cpp" />
     <ClCompile Include="Components\DrawableShapeComponent.cpp" />
     <ClCompile Include="Components\EllipseComponent.cpp" />
+    <ClCompile Include="Components\MovementComponent.cpp" />
     <ClCompile Include="Components\RectangleComponent.cpp" />
     <ClCompile Include="Components\TextBoxComponent.cpp" />
     <ClCompile Include="Managers\GameManager.cpp" />

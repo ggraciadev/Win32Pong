@@ -114,9 +114,6 @@
     <ClInclude Include="..\Game\Scenes\TestScene.h">
       <Filter>Game\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Game\Actors\MyEllipseActor.h">
-      <Filter>Game\Actors</Filter>
-    </ClInclude>
     <ClInclude Include="..\Game\Managers\MyGameManager.h">
       <Filter>Game\Managers</Filter>
     </ClInclude>
@@ -171,6 +168,12 @@
     <ClInclude Include="Components\CollisionComponent.h">
       <Filter>Engine\Archivos de encabezado\Components</Filter>
     </ClInclude>
+    <ClInclude Include="..\Game\Actors\Ball.h">
+      <Filter>Game\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\MovementComponent.h">
+      <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Objects\Actor.cpp">
@@ -208,9 +211,6 @@
     </ClCompile>
     <ClCompile Include="..\Game\Scenes\TestScene.cpp">
       <Filter>Game\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Game\Actors\MyEllipseActor.cpp">
-      <Filter>Game\Actors</Filter>
     </ClCompile>
     <ClCompile Include="..\Game\Managers\MyGameManager.cpp">
       <Filter>Game\Managers</Filter>
@@ -270,6 +270,12 @@
       <Filter>Engine\Archivos de origen\Components</Filter>
     </ClCompile>
     <ClCompile Include="Components\CollisionComponent.cpp">
+      <Filter>Engine\Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Actors\Ball.cpp">
+      <Filter>Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\MovementComponent.cpp">
       <Filter>Engine\Archivos de origen\Components</Filter>
     </ClCompile>
   </ItemGroup>

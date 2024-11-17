@@ -2,6 +2,7 @@
 #include "../../Engine/Objects/Pawn.h"
 #include "../../Engine/Components/RectangleComponent.h"
 #include "../../Engine/Components/BoxCollisionComponent.h"
+#include "../../Engine/Components/MovementComponent.h"
 
 class Paddle : public Pawn
 {
@@ -12,10 +13,10 @@ public:
 
 protected:
     RectangleComponent*     m_rectangleComponent;   // The rectangle component
+    MovementComponent*      m_movementComponent;
     BoxCollisionComponent*  m_boxCollisionComponent;
-    float                   m_maxSpeed;             // Max movement speed of the paddle
-    float                   m_currentSpeed;         // Current movement speed of the paddle
     Vector2D                m_input;                // Current input movement that the PlayerController is sending
+
     
 /**
 This event is called at the begining of the destructor method
@@ -42,13 +43,13 @@ This methed updates the current speed value considering the input value
 * Sets a new value for the max movement speed
 * @param speed: New movement speed
 */
-    void SetMaxSpeed(float speed);
+    void SetMaxSpeed(float speed) { m_movementComponent->SetMaxSpeed(speed); }
 
 /**
 * Sets a new value for the curren movement speed
 * @param speed: New current speed
 */
-    void SetCurrentSpeed(float speed);
+    void SetCurrentSpeed(float speed) { m_movementComponent->SetCurrentSpeed(speed); }
 
 /**
 * Sets a new value for the input
@@ -56,7 +57,7 @@ This methed updates the current speed value considering the input value
 */
     void SetInput(Vector2D input);
 
-    void SetInputX(float input);
+    void SetInputX(float input) { SetInput(Vector2D(input, m_input.GetY())); }
 
-    void SetInputY(float input);
+    void SetInputY(float input) { SetInput(Vector2D(m_input.GetX(), input)); }
 };
