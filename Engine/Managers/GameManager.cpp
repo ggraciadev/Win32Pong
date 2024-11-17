@@ -61,9 +61,8 @@ void GameManager::UpdateScene(float deltaTime) {
 	if (!m_gameInitialized) { return; }
 	if (GetCurrentScene() != NULL) {
 		m_inputManager->UpdateInputState();
-		Scene* currentScene = GetCurrentScene();
-		currentScene->PhysicsTick();
-		currentScene->Tick(deltaTime);
+		m_physicsManager->UpdateCollisions();
+		GetCurrentScene()->Tick(deltaTime);
 	}
 }
 

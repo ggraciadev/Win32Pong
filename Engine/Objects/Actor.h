@@ -40,12 +40,6 @@ This event is called when the game starts or when the owner Actor is spawned
 This event is called when the game starts or when the owner Actor is spawned
 */
     virtual void Init();
-
-
-/**
-This event is for the physics calculaton of the Actor. This method automaticaly calls the SafePhysicsTick of all its ActorComponents
-*/
-    void PhysicsTick();
     
 /**
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
@@ -76,8 +70,6 @@ This event is for the rendering of the Actor. This method automaticaly calls the
     virtual void OnActorBeginOverlap(Actor* other, CollisionComponent* otherComponent) {}
 
     virtual void OnActorEndOverlap(Actor* other, CollisionComponent* otherComponent) {}
-
-    virtual void OnActorHit(Actor* other, CollisionComponent* otherComponent) {}
 };
 
 

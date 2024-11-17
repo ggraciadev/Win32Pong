@@ -47,16 +47,6 @@ This event is called when the game starts or when the owner Actor is spawned
 	virtual void BeginPlay() {};
 
 /**
-This method checks if the physics of the component should be updated and calls the PhysicsTick method to be updated.
-*/
-	virtual void SafePhysicsTick();
-
-/**
-This event is for the physics collision calculations. This method should be overrided by every ActorComponent that uses it
-*/
-	virtual void PhysicsTick() {};
-
-/**
 This method checks if the component should be updated and calls the Tick method to be updated.
 */
 	virtual void SafeTick(float deltaTime);
@@ -76,6 +66,12 @@ This event is for the rendering of the component if needed. This method should b
 */
 	virtual void Draw() {};
 
+
+	/**
+	* This method returns a reference of the owner actor
+	* @return A reference of the owner actor
+	*/
+	Actor* GetOwnerActor() { return m_actor; }
 /**
 * This method returns a reference of the transform
 * @return A reference of the transform of the ActorComponent

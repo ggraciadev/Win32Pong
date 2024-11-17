@@ -1,6 +1,7 @@
 #pragma once
 #include "../../Engine/Objects/Pawn.h"
 #include "../../Engine/Components/RectangleComponent.h"
+#include "../../Engine/Components/BoxCollisionComponent.h"
 
 class Paddle : public Pawn
 {
@@ -11,9 +12,10 @@ public:
 
 protected:
     RectangleComponent*     m_rectangleComponent;   // The rectangle component
+    BoxCollisionComponent*  m_boxCollisionComponent;
     float                   m_maxSpeed;             // Max movement speed of the paddle
     float                   m_currentSpeed;         // Current movement speed of the paddle
-    float                   m_input;                // Current input movement that the PlayerController is sending
+    Vector2D                m_input;                // Current input movement that the PlayerController is sending
     
 /**
 This event is called at the begining of the destructor method
@@ -52,5 +54,9 @@ This methed updates the current speed value considering the input value
 * Sets a new value for the input
 * @param speed: New input
 */
-    void SetInput(float input);
+    void SetInput(Vector2D input);
+
+    void SetInputX(float input);
+
+    void SetInputY(float input);
 };

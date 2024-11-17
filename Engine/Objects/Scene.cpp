@@ -43,15 +43,6 @@ void Scene::BeginPlay() {
 	m_sceneStarted = true;
 }
 
-void Scene::PhysicsTick() {
-	int size = m_actors.size();
-	for (int i = 0; i < size; ++i) {
-		if (m_actors[i] != NULL) {
-			m_actors[i]->PhysicsTick();
-		}
-	}
-}
-
 void Scene::Tick(float deltaTime) {
 	int size = m_actors.size();
 	for (int i = size-1; i >= 0; --i) {

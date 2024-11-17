@@ -14,7 +14,7 @@ void Vector2D::SetXY(float x, float y) {
 }
 
 float Vector2D::GetSize() const {
-	return (float)std::sqrt(m_x * m_x + m_y + m_y);
+	return (float)std::sqrt(m_x * m_x + m_y * m_y);
 }
 
 Vector2D Vector2D::operator=(const Vector2D other) {
@@ -47,5 +47,6 @@ float Vector2D::Dist(const Vector2D& other) const {
 }
 
 Vector2D Vector2D::GetNormal() const {
-	return ((*this) / GetSize());
+	if (GetSize() < 0.01f) return Vector2D(0, 0);
+	else return ((*this) / GetSize());
 }

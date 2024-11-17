@@ -28,12 +28,6 @@ void ActorComponent::SetComponentScale(Vector2D scale) {
 	m_transform.SetScale(scale);
 }
 
-void ActorComponent::SafePhysicsTick() {
-	if (m_PhysicsEnabled) {
-		PhysicsTick();
-	}
-}
-
 void ActorComponent::SafeTick(float deltaTime) {
 	if(m_canEverTick) {
 		Tick(deltaTime);

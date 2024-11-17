@@ -46,13 +46,6 @@ void Actor::EndPlay() {
 
 }
 
-void Actor::PhysicsTick() {
-	int size = m_actorComponents.size();
-	for (int i = 0; i < size; ++i) {
-		m_actorComponents[i]->SafePhysicsTick();
-	}
-}
-
 void Actor::Tick(float deltaTime) {
 	int size = m_actorComponents.size();
 	for (int i = 0; i < size; ++i) {

@@ -3,20 +3,6 @@
 #include <set>
 #include "../Components/CollisionComponent.h"
 
-typedef struct CollisionPair {
-	CollisionComponent* collisionA = NULL;
-	CollisionComponent* collisionB = NULL;
-
-	CollisionPair() {
-
-	}
-
-	CollisionPair(CollisionComponent* a, CollisionComponent* b) {
-		collisionA = a;
-		collisionB = b;
-	}
-} CollisionPair;
-
 
 class PhysicsManager {
 
@@ -35,6 +21,8 @@ public:
 
 	void RegisterCollision(CollisionComponent* collision);
 	void UnregisterCollision(CollisionComponent* collision);
+
+	void UpdateCollisions();
 
 
 };

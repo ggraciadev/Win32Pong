@@ -162,11 +162,17 @@
     <ClInclude Include="Managers\InputManager.h">
       <Filter>Engine\Archivos de encabezado\Managers</Filter>
     </ClInclude>
+    <ClInclude Include="Managers\PhysicsManager.h">
+      <Filter>Engine\Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\BoxCollisionComponent.h">
+      <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\CollisionComponent.h">
+      <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Engine\Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Objects\Actor.cpp">
       <Filter>Engine\Archivos de origen\Objects</Filter>
     </ClCompile>
@@ -253,6 +259,18 @@
     </ClCompile>
     <ClCompile Include="Managers\InputManager.cpp">
       <Filter>Engine\Archivos de origen\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main.cpp">
+      <Filter>Engine\Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\PhysicsManager.cpp">
+      <Filter>Engine\Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\BoxCollisionComponent.cpp">
+      <Filter>Engine\Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\CollisionComponent.cpp">
+      <Filter>Engine\Archivos de origen\Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
