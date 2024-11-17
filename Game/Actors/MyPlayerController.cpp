@@ -4,8 +4,8 @@
 void MyPlayerController::RegisterInputs() {
 	RegisterKey('W');
 	RegisterKey('S');
-	RegisterKey('A');
-	RegisterKey('D');
+	/*RegisterKey('A');
+	RegisterKey('D');*/
 }
 
 void MyPlayerController::OnPossess() {
@@ -23,7 +23,7 @@ void MyPlayerController::UpdateInput() {
 		else {
 			m_paddle->SetInputY(0);
 		}
-		if (GetKeyPressed('A')) {
+		/*if (GetKeyPressed('A')) {
 			m_paddle->SetInputX(-1);
 		}
 		else if (GetKeyPressed('D')) {
@@ -31,6 +31,6 @@ void MyPlayerController::UpdateInput() {
 		}
 		else {
 			m_paddle->SetInputX(0);
-		}
+		}*/
 	}
 }
