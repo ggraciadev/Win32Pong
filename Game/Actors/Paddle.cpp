@@ -14,7 +14,7 @@ Paddle::~Paddle() {
 
 void Paddle::BeginPlay() {
 	Pawn::BeginPlay();
-	m_rectangleComponent->SetColor(D2D1::ColorF(0.8f, 0.8f, 0.8f));
+	m_rectangleComponent->SetColor(D2D1::ColorF(0.8f, 0.2f, 0.8f));
 	m_rectangleComponent->SetRectangleSize(Vector2D(24, 150));
 	m_rectangleComponent->SetCornersRadius(Vector2D(2, 2));
 	SetMaxSpeed(800);

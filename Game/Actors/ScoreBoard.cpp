@@ -26,10 +26,11 @@ void ScoreBoard::EndPlay() {
 
 void ScoreBoard::Tick(float deltaTime) {
 	TextBoxActor::Tick(deltaTime);
+	UpdateScoreBoardText();
 }
 
 void ScoreBoard::UpdateScoreBoardText() {
-	m_textBoxComponent->SetText(L"" + std::to_wstring(m_scoreL) + L" - " + std::to_wstring(m_scoreR));
+	m_textBoxComponent->SetText(L"" + std::to_wstring(m_gameManager->GetScorePlayerA()) + L" - " + std::to_wstring(m_gameManager->GetScorePlayerB()));
 }
 
 void ScoreBoard::UpdateScoreBoardPosition() {

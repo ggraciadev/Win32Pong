@@ -55,7 +55,7 @@ void MainWindow::StartRender() {
 
         pRenderTarget->BeginDraw();
 
-        pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::SkyBlue));
+        pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF(0.8f, 0.5f, 0.5f)));
     }
 }
 void MainWindow::EndRender() {

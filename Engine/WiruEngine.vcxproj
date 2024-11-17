@@ -128,6 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\Game\Actors\Ball.h" />
+    <ClInclude Include="..\Game\Actors\Goal.h" />
+    <ClInclude Include="..\Game\Actors\MyAIController.h" />
     <ClInclude Include="..\Game\Actors\MyPlayerController.h" />
     <ClInclude Include="..\Game\Actors\Paddle.h" />
     <ClInclude Include="..\Game\Actors\ScoreBoard.h" />
@@ -168,6 +170,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Game\Actors\Ball.cpp" />
+    <ClCompile Include="..\Game\Actors\Goal.cpp" />
+    <ClCompile Include="..\Game\Actors\MyAIController.cpp" />
     <ClCompile Include="..\Game\Actors\MyPlayerController.cpp" />
     <ClCompile Include="..\Game\Actors\Paddle.cpp" />
     <ClCompile Include="..\Game\Actors\ScoreBoard.cpp" />

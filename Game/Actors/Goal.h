@@ -1,18 +1,18 @@
 #pragma once
-#include "../../Engine/Objects/TextBoxActor.h"
+#include "../../Engine/Objects/RectangleActor.h"
 #include "../../Engine/Components/RectangleComponent.h"
-#include "../Managers/MyGameManager.h"
+#include "../../Engine/Components/BoxCollisionComponent.h"
 
-class ScoreBoard : public TextBoxActor
+class Goal : public RectangleActor
 {
 
 public:
-    ScoreBoard();
-    virtual ~ScoreBoard();
+    Goal();
+    virtual ~Goal();
 
 protected:
 
-    MyGameManager*  m_gameManager = NULL;   // Reference to the game manager
+    BoxCollisionComponent* m_boxCollisionComponent;
     
 /**
 This event is called at the begining of the destructor method
@@ -29,14 +29,4 @@ public:
 This event is for the logic of the component, the behaviour that has to be updated frame by frame if needed.
 */
     virtual void Tick(float deltaTime);
-
-/**
-This method is to update the text of the score board with the current score
-*/
-    void UpdateScoreBoardText();
-
-/**
-This method is to update the position
-*/
-    void UpdateScoreBoardPosition();
 };
