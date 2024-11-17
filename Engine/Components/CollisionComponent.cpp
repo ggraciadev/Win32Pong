@@ -27,7 +27,7 @@ void CollisionComponent::EndPlay() {
 }
 
 bool CollisionComponent::CheckCollision(CollisionComponent* other) const {
-	if (((BoxCollisionComponent*)other) != NULL) {
+	if (dynamic_cast<BoxCollisionComponent*>(other) != NULL) {
 		return CheckCollision((BoxCollisionComponent*)other);
 	}
 

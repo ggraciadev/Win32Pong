@@ -1,15 +1,18 @@
 #pragma once
 #include "../../Engine/Objects/RectangleActor.h"
 #include "../../Engine/Components/RectangleComponent.h"
+#include "../../Engine/Components/BoxCollisionComponent.h"
 
-class MyRectangleActor : public RectangleActor
+class Wall : public RectangleActor
 {
 
 public:
-    MyRectangleActor();
-    virtual ~MyRectangleActor();
+    Wall();
+    virtual ~Wall();
 
 protected:
+
+    BoxCollisionComponent* m_boxCollisionComponent;
     
 /**
 This event is called at the begining of the destructor method

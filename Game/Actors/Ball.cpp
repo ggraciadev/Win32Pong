@@ -19,7 +19,7 @@ void Ball::BeginPlay() {
 	m_boxCollisionComponent->SetBoxSize(40, 40);
 	m_movementComponent->SetMaxSpeed(400);
 	m_movementComponent->SetCurrentSpeed(400);
-	m_movementComponent->SetMovementDirection(Vector2D(-1, 0));
+	m_movementComponent->SetMovementDirection(Vector2D(-1, -1));
 }
 
 void Ball::EndPlay() {
@@ -31,11 +31,11 @@ void Ball::Tick(float deltaTime) {
 }
 
 void Ball::OnActorBeginOverlap(Actor* other, CollisionComponent* otherComponent) {
-	Paddle* paddle = (Paddle*)other;
-	if (paddle != NULL) { //if the ball impacts with a paddle
+	if (dynamic_cast<Paddle*>(other) != NULL) { //if the ball impacts with a paddle
 		m_movementComponent->SetMovementDirectionX(m_movementComponent->GetMovementDirection().GetX() * -1);
-	}
+	} // if the ball impacts with a Goal
 	else { // if the ball impacts with a wall
 		m_movementComponent->SetMovementDirectionY(m_movementComponent->GetMovementDirection().GetY() * -1);
 	}
+
 }

@@ -59,6 +59,7 @@ void GameManager::StartScene() {
 
 void GameManager::UpdateScene(float deltaTime) {
 	if (!m_gameInitialized) { return; }
+	if (deltaTime > 0.1f) { return; } //we will skip giant frame times
 	if (GetCurrentScene() != NULL) {
 		m_inputManager->UpdateInputState();
 		m_physicsManager->UpdateCollisions();

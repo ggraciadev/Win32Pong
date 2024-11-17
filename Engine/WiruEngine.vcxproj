@@ -129,9 +129,9 @@
   <ItemGroup>
     <ClInclude Include="..\Game\Actors\Ball.h" />
     <ClInclude Include="..\Game\Actors\MyPlayerController.h" />
-    <ClInclude Include="..\Game\Actors\MyRectangleActor.h" />
     <ClInclude Include="..\Game\Actors\Paddle.h" />
     <ClInclude Include="..\Game\Actors\ScoreBoard.h" />
+    <ClInclude Include="..\Game\Actors\Wall.h" />
     <ClInclude Include="..\Game\Managers\MyGameManager.h" />
     <ClInclude Include="..\Game\Managers\MySceneManager.h" />
     <ClInclude Include="..\Game\Scenes\TestScene.h" />
@@ -169,9 +169,9 @@
   <ItemGroup>
     <ClCompile Include="..\Game\Actors\Ball.cpp" />
     <ClCompile Include="..\Game\Actors\MyPlayerController.cpp" />
-    <ClCompile Include="..\Game\Actors\MyRectangleActor.cpp" />
     <ClCompile Include="..\Game\Actors\Paddle.cpp" />
     <ClCompile Include="..\Game\Actors\ScoreBoard.cpp" />
+    <ClCompile Include="..\Game\Actors\Wall.cpp" />
     <ClCompile Include="..\Game\Managers\MyGameManager.cpp" />
     <ClCompile Include="..\Game\Managers\MySceneManager.cpp" />
     <ClCompile Include="..\Game\Scenes\TestScene.cpp" />

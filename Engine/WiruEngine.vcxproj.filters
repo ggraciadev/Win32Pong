@@ -126,9 +126,6 @@
     <ClInclude Include="Objects\RectangleActor.h">
       <Filter>Engine\Archivos de encabezado\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="..\Game\Actors\MyRectangleActor.h">
-      <Filter>Game\Actors</Filter>
-    </ClInclude>
     <ClInclude Include="Components\TextBoxComponent.h">
       <Filter>Engine\Archivos de encabezado\Components</Filter>
     </ClInclude>
@@ -173,6 +170,9 @@
     </ClInclude>
     <ClInclude Include="Components\MovementComponent.h">
       <Filter>Engine\Archivos de encabezado\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Actors\Wall.h">
+      <Filter>Game\Actors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -227,9 +227,6 @@
     <ClCompile Include="Components\RectangleComponent.cpp">
       <Filter>Engine\Archivos de origen\Components</Filter>
     </ClCompile>
-    <ClCompile Include="..\Game\Actors\MyRectangleActor.cpp">
-      <Filter>Game\Actors</Filter>
-    </ClCompile>
     <ClCompile Include="Components\TextBoxComponent.cpp">
       <Filter>Engine\Archivos de origen\Components</Filter>
     </ClCompile>
@@ -277,6 +274,9 @@
     </ClCompile>
     <ClCompile Include="Components\MovementComponent.cpp">
       <Filter>Engine\Archivos de origen\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Actors\Wall.cpp">
+      <Filter>Game\Actors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
