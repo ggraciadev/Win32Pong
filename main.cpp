@@ -2,8 +2,8 @@
 #define UNICODE
 #endif 
 
-#include "./Windows/MainWindow.h"
-#include "../Game/Managers/MyGameManager.h"
+#include "./Engine/Windows/MainWindow.h"
+#include "./Game/Managers/MyGameManager.h"
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
 {

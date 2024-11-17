@@ -171,12 +171,12 @@
     <ClCompile Include="..\Game\Managers\MyGameManager.cpp" />
     <ClCompile Include="..\Game\Managers\MySceneManager.cpp" />
     <ClCompile Include="..\Game\Scenes\TestScene.cpp" />
+    <ClCompile Include="..\main.cpp" />
     <ClCompile Include="Components\ActorComponent.cpp" />
     <ClCompile Include="Components\DrawableShapeComponent.cpp" />
     <ClCompile Include="Components\EllipseComponent.cpp" />
     <ClCompile Include="Components\RectangleComponent.cpp" />
     <ClCompile Include="Components\TextBoxComponent.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\GameManager.cpp" />
     <ClCompile Include="Managers\InputManager.cpp" />
     <ClCompile Include="Managers\SceneManager.cpp" />
